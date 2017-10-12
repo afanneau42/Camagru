@@ -7,7 +7,8 @@
 ?>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="connection.css?version=52">
+        <link rel="stylesheet" type="text/css" href="connection.css?version=54">
+        <link rel="stylesheet" type="text/css" href="index.css?version=53">
         <meta charset="utf-8">
         <title>Camagru : Connexion</title>
     </head>
@@ -28,7 +29,7 @@
             </div>
         </div>
         <div id="mid">
-            <div id="center2">
+            <div id="mid-center">
                 <?PHP
                     if ($_SESSION['error'] == 0)
                         echo '<div class="card">';
@@ -40,7 +41,7 @@
                         <div>
                             Username
                             <br />
-                            <input type="text" name="username">
+                            <input type="text" name="username" value="<?PHP echo $_POST['username'];?>">
                         </div>
                         <br />
                         <div>

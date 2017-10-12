@@ -1,8 +1,4 @@
-<?PHP
-    session_start();
-    if (!isset($_SESSION['logged_on_user']))
-        $_SESSION['logged_on_user'] = '';
-?>
+
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="index.css?version=51">
@@ -35,11 +31,14 @@
                         <a href="connection.php"><div id="connexion">Profil</div></a>
                     </div>';
                 }
-
             ?>
         </div>
         <div id="mid">
             <div id="mid-center">
+                <?PHP
+                    include "functions/verify_mail.php";
+                    echo verif_mail($_GET['code']);
+                ?>
             </div>
         </div>
         <div id="foot">

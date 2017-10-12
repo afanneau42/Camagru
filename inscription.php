@@ -1,10 +1,12 @@
 <?PHP
+    session_start();
     if (isset($_SESSION['logged_on_user']) && $_SESSION['logged_on_user'] != '')
         header('Location: index.php');
 ?>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="inscription.css?version=52">
+        <link rel="stylesheet" type="text/css" href="index.css?version=52">
+        <link rel="stylesheet" type="text/css" href="connection.css?version=52">
         <meta charset="utf-8">
         <title>Camagru : Connexion</title>
     </head>
@@ -25,36 +27,40 @@
             </div>
         </div>
         <div id="mid">
-            <div id="center2">
+            <div id="mid-center">
                 <div class="card">
-                    <form>
+                    <form method="post">
                         <div>
                             Username
                             <br />
-                            <input type="text" name="firstname">
+                            <input type="text" name="username" value="<?PHP echo $_POST['username'];?>">
                         </div>
                         <br />
                         <div>
                             Password
                             <br />
-                            <input type="password" name="firstname">
+                            <input type="password" name="password">
                         </div>
                         <div>
                             Confirm password
                             <br />
-                            <input type="password" name="firstname">
+                            <input type="password" name="password-re">
                         </div>
                         <br />
                         <div>
                             Email
                             <br />
-                            <input type="mail" name="firstname">
+                            <input type="mail" name="mail" value="<?PHP echo $_POST['mail'];?>">
                         </div>
                         <br />
                         <br />
+                        <?PHP
+                            include "create_account.php";
+                            echo create_acc()."<br />";
+                        ?>
                         <div class="flex-center"></div>
                         <div id="submit-div">
-                            <input id="submit-button" type="submit" value="Submit">
+                            <input id="submit-button" type="submit" value="Submit" name="submit">
                         </div>
                     </form>
                 </div>

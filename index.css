@@ -3,8 +3,16 @@
     src: url(./ressources/Solar_Bold.ttf);
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
 a {
     text-decoration: none;
+    color: inherit
 }
 
 body {
@@ -83,6 +91,54 @@ body {
     width: 6vw;
 }
 
+#txt {
+    font-family: Solar_Bold;
+    color: yellow;
+    text-shadow: 2px 1px 1px orangered;
+    text-decoration: none;
+    min-height: 1.5vw;
+    font-size: 1.5vw; 
+}
+
+@media (max-width: 1400px) {
+    #text-logo{
+        min-height: 4vw;
+        font-size: 60px;
+    }
+
+    #connexion {
+        min-height: 2vw;
+        font-size: 30px; 
+    }
+
+    #inscription {
+        min-height: 1.3vw;
+        font-size: 20px; 
+    }
+
+    #text-logo-div {
+        min-height: 5vw;
+    }
+
+    #logo {
+        background-image: url(https://icon-icons.com/icons2/426/PNG/512/Cam_camera_1112px_1195275_42267.png);
+        background-size:contain;
+        background-repeat:no-repeat;
+        min-height: 100%;
+        max-width: 100%;
+        width: 100px;
+    }
+
+        #txt {
+        font-family: Solar_Bold;
+        color: yellow;
+        text-shadow: 2px 1px 1px orangered;
+        text-decoration: none;
+        min-height: 1.5vw;
+        font-size: 20px; 
+    }
+}
+
 #foot {
     width: 97%;
     background-color: rgb(45,45,112);
@@ -94,15 +150,6 @@ body {
     height: 3%;
     min-height: 2vw;
     justify-content: flex-end;
-}
-
-#txt {
-    font-family: Solar_Bold;
-    color: yellow;
-    text-shadow: 2px 1px 1px orangered;
-    text-decoration: none;
-    min-height: 1.5vw;
-    font-size: 1.5vw; 
 }
 
 element.style {
@@ -128,47 +175,5 @@ element.style {
     background-image: url("http://www.nationaltrustimages.org.uk/media/3949/photorapher%20lead.jpg");
     background-size:cover;
     width: 100%;
-    height: 100%;
-   
-}
-
-.card {
-    margin-top: 5%;
-    margin-bottom: 5%;
-    background-color: rgb(45,45,112);
-    padding: 5%;
-    padding-left: 15%;
-    padding-right: 15%;
-    border: 5px solid rgb(45,45,112);
-    box-shadow: 1px 1px 10px rgb(45,45,112);
-    border-radius: 40px;
-}
-
-form, input{
-    text-align: center;
-    font-size: 2vw;
-}
-
-input {
-    background-color: whitesmoke;
-    border: none;
-    height: 5%;
-    border-radius: 5px;
-    font-size: 1vw;
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-
-}
-
-#submit-button {
-    background-color: rgb(45,45,112);
-    height: 20%;
-    font-size: 3vw;
-    width: 75%;
-}
-
-#submit-div {
-    border: 5px solid yellow;
-    border-radius: 40px;
-    box-shadow: 2px 1px 4px orangered;
+    height: 100%;  
 }
