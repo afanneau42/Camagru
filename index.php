@@ -24,15 +24,15 @@
                 if ($_SESSION['logged_on_user'] == ''){
                     echo '
                         <div id="div-connexion">
-                            <a href="connection.php"><div id="connexion">Connexion</div></a>
-                            <a href="inscription.php"><div id="inscription">Inscription</div></a>
+                            <a href="connection.php"><div id="connexion">Sign in</div></a>
+                            <a href="inscription.php"><div id="inscription">Sign up</div></a>
                         </div>';
                 }
                 else {
                     echo '
                     <div id="div-connexion">
-                        <a href="logout.php"><div id="connexion">Dexonnexion</div></a>
-                        <a href="connection.php"><div id="connexion">Profil</div></a>
+                        <a href="logout.php"><div id="connexion">Logout</div></a>
+                        <a href="profile.php"><div id="connexion">Profile</div></a>
                     </div>';
                 }
 

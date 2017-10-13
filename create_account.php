@@ -1,20 +1,34 @@
 <?PHP
     function create_acc() {
-        if ($_POST["submit"] === "Submit")
+        include "functions/f_user.php";
+        if (htmlspecialchars($_POST["submit"]) === "Submit")
         {
             /* Check fields */
 
-            if ($_POST['username'] == '' || $_POST['password'] == '' || $_POST['mail'] == '' || $_POST['password-re'] == '')
+            if (htmlspecialchars($_POST['username']) == '' || htmlspecialchars($_POST['password']) == '' || htmlspecialchars($_POST['mail']) == '' || htmlspecialchars($_POST['password-re']) == '')
                 return "<p style='color:red;'>Veuillez remplir tout les champs</p>";
             
             /* Check password confirmation */
 
-            else if ($_POST['password'] !== $_POST['password-re'])
+            else if (htmlspecialchars($_POST['password']) !== htmlspecialchars($_POST['password-re']))
                 return "<p style='color:red;'>Mot de passe different</p>";
             
+            /* Check password security */
+            
+            $err = valid_password(htmlspecialchars($_POST['password']));
+
+            if ($err == 1)
+                return "<p style='color:red;'>Votre mot de passe doit contenir au moins 8 caracteres</p>";
+            else if ($err == 2)
+                return "<p style='color:red;'>Votre mot de passe doit contenir au moins une majuscule</p>";
+            else if ($err == 3)
+                return "<p style='color:red;'>Votre mot de passe doit contenir au moins une minuscule</p>";
+            else if ($err == 4)
+                return "<p style='color:red;'>Votre mot de passe doit contenir au moins un chiffre</p>";
+
             /* Check mail */
             
-            else if (!filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL))
+            else if (!filter_var(htmlspecialchars($_POST['mail']), FILTER_VALIDATE_EMAIL))
                 return "<p style='color:red;'>mail invalide</p>";
             else
             {
@@ -22,7 +36,7 @@
 
                 include "functions/functions_db.php";
                 $prep = $dbsql->prepare('SELECT * FROM user WHERE username = :username');
-                $result = $prep->execute(array('username' => $_POST['username']));
+                $result = $prep->execute(array('username' => htmlspecialchars($_POST['username'])));
                 $array = $prep->fetchAll();
                 foreach ($array as $user)
                 {
@@ -32,7 +46,7 @@
                 /* Check mail into db */
 
                 $prep = $dbsql->prepare('SELECT * FROM user WHERE mail = :mail');
-                $result = $prep->execute(array('mail' => $_POST['mail']));
+                $result = $prep->execute(array('mail' => htmlspecialchars($_POST['mail'])));
                 $array = $prep->fetchAll();
                 foreach ($array as $user)
                 {
@@ -43,17 +57,26 @@
 
                 $activ_code = hash("whirlpool", rand());
                 $prep = $dbsql->prepare('INSERT INTO user VALUES (NULL, :username, :pw_h, :mail, 1, :activ_code)');
-                $prep -> bindParam(':username', $_POST['username']);
-                $prep -> bindParam(':pw_h', hash('whirlpool', $_POST['password']));
-                $prep -> bindParam(':mail', $_POST['mail']);
+                $prep -> bindParam(':username', htmlspecialchars($_POST['username']));
+                $prep -> bindParam(':pw_h', hash('whirlpool', htmlspecialchars($_POST['password'])));
+                $prep -> bindParam(':mail', htmlspecialchars($_POST['mail']));
                 $prep -> bindParam(':activ_code', $activ_code);
                 $result = $prep->execute();
                 
                 /* Send activation mail */
 
-                $to = $_POST['mail'];
-                $subject = "Activate youre account";
-                $txt = "Welcome " .$_POST['username']. ', \r\n The last step is to verify your email by clicking in this link : \r\n \r\n localhost:8080/camagru/verify_email.php?code=' . $activ_code . "\r\n\r\n See you soon\r\nCamagru's staff\r\n";
+                if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) // On filtre les serveurs qui bugs
+                {
+                    $passage_ligne = "\r\n";
+                }
+                else
+                {
+                    $passage_ligne = "\n";
+                }
+
+                $to = htmlspecialchars($_POST['mail']);
+                $subject = "Activate your account";
+                $txt = "Welcome " . htmlspecialchars($_POST['username']) . ', ' . $passage_ligne . ' The last step is to verify your email by clicking in this link : ' . $passage_ligne . $passage_ligne . ' http://localhost:8080/camagru/verify_email.php?code=' . $activ_code . $passage_ligne . $passage_ligne . "See you soon" . $passage_ligne . "Camagru's staff" . $passage_ligne;
                 $headers = "From: support@camagru.com";
 
                 mail($to,$subject,$txt,$headers);

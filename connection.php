@@ -24,8 +24,8 @@
 
             </div>
             <div id="div-connexion">
-                <a href="connection.php"><div id="connexion">Connexion</div></a>
-                <a href="inscription.php"><div id="inscription">Inscription</div></a>
+                <a href="connection.php"><div id="connexion">Sign in</div></a>
+                <a href="inscription.php"><div id="inscription">Sign up</div></a>
             </div>
         </div>
         <div id="mid">
@@ -41,7 +41,7 @@
                         <div>
                             Username
                             <br />
-                            <input type="text" name="username" value="<?PHP echo $_POST['username'];?>">
+                            <input type="text" name="username" value="<?PHP echo htmlspecialchars($_POST['username']);?>">
                         </div>
                         <br />
                         <div>
