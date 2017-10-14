@@ -10,6 +10,7 @@
     min-width: 345px;
     position: relative;
     align-items: center;
+    overflow: auto;
 }
 
 .card-error {

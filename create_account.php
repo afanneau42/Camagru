@@ -55,17 +55,20 @@
                 
                 /* Insert user into db */
 
+                $pw_h = hash('whirlpool', $_POST['password']);
+
                 $activ_code = hash("whirlpool", rand());
                 $prep = $dbsql->prepare('INSERT INTO user VALUES (NULL, :username, :pw_h, :mail, 1, :activ_code)');
-                $prep -> bindParam(':username', htmlspecialchars($_POST['username']));
-                $prep -> bindParam(':pw_h', hash('whirlpool', htmlspecialchars($_POST['password'])));
-                $prep -> bindParam(':mail', htmlspecialchars($_POST['mail']));
+                // $prep -> bindParam(':username', htmlspecialchars($_POST['username']));
+                $prep -> bindParam(':username', $_POST['username']);
+                $prep -> bindParam(':pw_h', $pw_h);
+                $prep -> bindParam(':mail', $_POST['mail']);
                 $prep -> bindParam(':activ_code', $activ_code);
                 $result = $prep->execute();
                 
                 /* Send activation mail */
 
-                if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) // On filtre les serveurs qui bugs
+                if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", htmlspecialchars($_POST['mail']))) // On filtre les serveurs qui bugs
                 {
                     $passage_ligne = "\r\n";
                 }

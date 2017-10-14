@@ -18,7 +18,18 @@
                 <a href="index.php" id="text-logo">Camagru</a>
             </div>
             <div class="flex-center">
-
+                <?PHP
+                    if (!$_SESSION['logged_on_user'] == ''){
+                        echo '
+                            <div id="div-core">
+                                <a href="picture.php"><div class="div-core-txt">Take a picture !</div></a>
+                            </div>
+                            <div id="div-core">
+                                <a href="gallery.php"><div class="div-core-txt">Gallery</div></a>
+                            </div>
+                            ';
+                    }
+                ?> 
             </div>
             <?PHP
                 if ($_SESSION['logged_on_user'] == ''){
@@ -35,7 +46,6 @@
                         <a href="profile.php"><div id="connexion">Profile</div></a>
                     </div>';
                 }
-
             ?>
         </div>
         <div id="mid">

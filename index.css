@@ -46,6 +46,8 @@ body {
 
 .flex-center {
     flex: 1;
+    display:flex;
+    justify-content: space-around; 
 }
 
 #div-connexion {
@@ -56,7 +58,7 @@ body {
     height: 100%;
 }
 
-#text-logo, #connexion, #inscription, form, #submit-button{
+#text-logo, #connexion, #inscription, form, #submit-button, .div-core-txt{
     font-family: Solar_Bold;
     color: yellow;
     text-shadow: 2px 1px 1px orangered;
@@ -67,7 +69,7 @@ body {
     font-size: 4vw;
 }
 
-#connexion {
+#connexion , .div-core-txt{
     min-height: 2vw;
     font-size: 2vw; 
 }
@@ -106,7 +108,7 @@ body {
         font-size: 60px;
     }
 
-    #connexion {
+    #connexion , .div-core-txt{
         min-height: 2vw;
         font-size: 30px; 
     }

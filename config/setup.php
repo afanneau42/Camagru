@@ -23,11 +23,53 @@
         active VARCHAR(255))");
     $prep->execute(array($key));
 
+    /* Post table creation */
+    
+    $prep = $dbsql->prepare("CREATE TABLE IF NOT EXISTS post(
+        id INT AUTO_INCREMENT PRIMARY KEY, 
+        author_id INT NOT NULL, 
+        creation_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP)");
+    $prep->execute(array($key));
+
+    /* Likes table creation */
+    
+    $prep = $dbsql->prepare("CREATE TABLE IF NOT EXISTS likes(
+        picture_id INT NOT NULL,
+        author_id INT NOT NULL)");
+    $prep->execute(array($key));
+
+    /* Coms table creation */
+    
+    $prep = $dbsql->prepare("CREATE TABLE IF NOT EXISTS comment(
+        picture_id INT NOT NULL,
+        author_id INT NOT NULL,
+        txt VARCHAR(255))");
+    $prep->execute(array($key));
+
+
     /* Users inserts */
 
     $dbsql->query("INSERT INTO user VALUES (NULL, 'admin', 'ecb4db9948a78308b05acca49bb1a74cc1c55ca89e11ef04fce8128da7f67a8e85e3f371fd265c17cf744028f9e0d38653e669b8b1288f7d8417991cbf58fe94', 'arthur.f@gmail.com', 2, 0)");
     $dbsql->query("INSERT INTO user VALUES (NULL, 'bgdu75', '8e835240f89a32be8c1c2f31fba878967b8d617d906e128d76f7f333237d63a598cb42bef9b79c6375909e5f2ad5a040c905a8673b915ec65c3ad654505a39a4', 'bgdu75@gmail.com', 1, 0)"); /* mdp='asdf' */
     $dbsql->query("INSERT INTO user VALUES (NULL, 'jeanmiche', '2f81ccdd50c1ee52b233111e5eb529edcbe57d7e132ade0108d932ac77163216e4bec7f96d2fe5b1f2dc795a94aa5b21c0590dabb5ffddd3bc6bc93419e5e031', 'jm.lepetit@gmail.com', 1, 0)"); /* mdp='potiron_bleu' */
+
+    /* Post inserts */
+    
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '3', '2017-04-12 10:23:37');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '2', '2017-09-06 11:13:55');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '1', '2017-10-01 14:25:55');");
+    
+    /* likes inserts */
+
+    $dbsql->query("INSERT INTO `likes` (`picture_id`, `author_id`) VALUES ('1', '3');");
+    $dbsql->query("INSERT INTO `likes` (`picture_id`, `author_id`) VALUES ('1', '2');");
+    $dbsql->query("INSERT INTO `likes` (`picture_id`, `author_id`) VALUES ('2', '2');");
+
+    /* Coms inserts */
+
+    $dbsql->query("INSERT INTO `comment` (`picture_id`, `author_id`, `txt`) VALUES ('1', '1', 'Nice picture man !');");
+    $dbsql->query("INSERT INTO `comment` (`picture_id`, `author_id`, `txt`) VALUES ('1', '2', 'Wow !');");
+    $dbsql->query("INSERT INTO `comment` (`picture_id`, `author_id`, `txt`) VALUES ('2', '3', 'Hahaha LOOOOOOOOOOOL ');");
 
     /* Close connection */
 
