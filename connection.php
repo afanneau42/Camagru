@@ -41,7 +41,7 @@
                         <div>
                             Username
                             <br />
-                            <input type="text" name="username" value="<?PHP echo htmlspecialchars($_POST['username']);?>">
+                            <input type="text" name="username" value="<?PHP if (!empty($_POST['username'])) {echo htmlspecialchars($_POST['username']);}?>">
                         </div>
                         <br />
                         <div>

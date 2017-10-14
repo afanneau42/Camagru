@@ -33,7 +33,7 @@
                         <div>
                             Username
                             <br />
-                            <input type="text" name="username" value="<?PHP echo htmlspecialchars($_POST['username']);?>">
+                            <input type="text" name="username" value="<?PHP if (!empty($_POST['username'])) { echo htmlspecialchars($_POST['username']);}?>">
                         </div>
                         <br />
                         <div>
@@ -50,13 +50,15 @@
                         <div>
                             Email
                             <br />
-                            <input type="mail" name="mail" value="<?PHP echo htmlspecialchars($_POST['mail']);?>">
+                            <input type="mail" name="mail" value="<?PHP if (!empty($_POST['username'])) {echo htmlspecialchars($_POST['mail']);}?>">
                         </div>
                         <br />
                         <br />
                         <?PHP
                             include "create_account.php";
-                            echo create_acc()."<br />";
+                            if (!empty($_POST['submit'])) {
+                                echo create_acc()."<br />";
+                            }
                         ?>
                         <div class="flex-center"></div>
                         <div id="submit-div">

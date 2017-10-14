@@ -3,10 +3,19 @@
     {
         include "functions/functions_db.php";
 
-        $prep = $dbsql->prepare('UPDATE user SET active = 0 WHERE active = :code');
+        $prep = $dbsql->prepare('SELECT COUNT(*) FROM user WHERE active = :code');
         $prep -> bindParam(':code', $code);
-        $result = $prep->execute();
-        return "<p style='color:green;'>Your account is now activated, loggin to begin</p>";
+        $prep->execute();
+        $r = $prep->fetchAll();
+        if ($r[0]["COUNT(*)"] == 1)
+        {
+            $prep = $dbsql->prepare('UPDATE user SET active = 0 WHERE active = :code');
+            $prep -> bindParam(':code', $code);
+            $result = $prep->execute();
+            return "<p style='color:green;'>Your account is now activated, loggin to begin</p>";
+        }
+        else
+            return "<p style='color:red;'>Wrong code</p>";
     }
 
     function reset_mdp($mail)

@@ -42,7 +42,7 @@
                         <?PHP
                             include "functions/f_user.php";
                             
-                            if (htmlspecialchars($_POST['submit']) == "Submit")
+                            if (!empty($_POST['submit']) && htmlspecialchars($_POST['submit']) == "Submit")
                                 echo reset_mdp(htmlspecialchars($_POST['mail']));
                         ?>
                         <div id="submit-div">

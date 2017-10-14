@@ -1,3 +1,9 @@
+<?PHP
+    session_start();
+    if (empty($_GET['code'])) {
+        header("Location:index.php");
+    }
+?>
 
 <html>
     <head>
