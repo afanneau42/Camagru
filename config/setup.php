@@ -28,7 +28,7 @@
     $prep = $dbsql->prepare("CREATE TABLE IF NOT EXISTS post(
         id INT AUTO_INCREMENT PRIMARY KEY, 
         author_id INT NOT NULL, 
-        creation_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP)");
+        creation_date INT NOT NULL)");
     $prep->execute(array($key));
 
     /* Likes table creation */
@@ -55,9 +55,9 @@
 
     /* Post inserts */
     
-    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '3', '2017-04-12 10:23:37');");
-    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '2', '2017-09-06 11:13:55');");
-    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '1', '2017-10-01 14:25:55');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '3', '1488688384');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '2', '1496924224');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '1', '1503212701');");
     
     /* likes inserts */
 

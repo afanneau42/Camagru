@@ -1,14 +1,53 @@
-.pic_card {
+.post_card {
+    padding: 10px;
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 10px;
     margin-bottom: 10px; 
     width: 300px;
     height: 300px;
-    background-color: rgb(45,45,112);
+    background-color: white;
     border: 5px solid rgb(45,45,112);
     box-shadow: 1px 1px 10px rgb(45,45,112);
     border-radius: 40px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.post_author {
+    font-family: Solar_Bold;
+    color: yellow;
+    text-shadow: 2px 1px 1px orangered;
+    text-decoration: none;
+    min-height: 1.5vw;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.post_picture {
+    max-width: 90%;
+    min-height: 75%;
+    margin-left: 5%;
+}
+
+
+.post_atributes{
+    display: flex;
+    flex-wrap: nowrap;
+    color: grey;
+}
+
+.post_like, .post_com {
+    flex: 1;
+    text-align: center;
+}
+
+.post_date {
+    flex: 3;
+    position: relative;
+    top: 5px;
 }
 
 #mid-center {
@@ -16,4 +55,63 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+}
+
+.post_like img, .post_com img {
+    height: 20px;
+    width: 20px;
+    position: relative;
+    top: 5px;
+}
+
+#vomi {
+    height: 25px;
+    width: 25px;
+}
+
+.post_picture {
+    background-image: url('./ressources/pipi.jpg');
+    background-size: cover;
+    box-shadow: 1px 1px 20px rgb(189, 189, 189);
+}
+
+.like_button_void {
+    background-image: url("ressources/like_void.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: none;
+    margin: auto;
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 1px 1px 20px white;
+}
+
+.like_button_red{
+    background-image: url("ressources/like_red_button.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: none;
+    margin: auto;
+    margin-top: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 1px 1px 20px white;
+}
+
+.post_picture:hover{
+    cursor: pointer;       
+}
+
+.post_picture:hover div{
+    display: block;
+    cursor: pointer;
+}
+.post_picture a div{
+    min-width: 50px;
+    min-height: 100px;
 }

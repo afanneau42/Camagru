@@ -2,12 +2,23 @@
     session_start();
     if (!isset($_SESSION['logged_on_user']) || $_SESSION['logged_on_user'] == "")
         header("Location:must_be_log.php");
+    
+    include "functions/functions_db.php";
+
+    $id = htmlspecialchars($_GET['id']);
+    $prep = $dbsql->prepare('SELECT COUNT(*) FROM likes WHERE picture_id=:picture_id');
+    $prep -> bindParam(':picture_id', $id);
+    $prep->execute();
+    $count = $prep->fetchAll();
+
+    if ($count[0]['COUNT(*)'] == 0)
+        header("Location:index.php");
 ?>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="index.css?version=51">
         <link rel="stylesheet" type="text/css" href="connection.css?version=51">
-        <link rel="stylesheet" type="text/css" href="gallery.css?version=55">
+        <link rel="stylesheet" type="text/css" href="post.css?version=55">
         <meta charset="utf-8">
         <title>Camagru</title>
     </head>
@@ -40,11 +51,34 @@
         </div>
         <div id="mid">
             <div id="mid-center">
-                <?PHP
-                    include "functions/f_display.php";
+                <div class="post_card">
+                    <div class="picture"></div>
+                    <div class="text">
+                        <div class="info">
+                            <div class="login">test login</div>
+                            <div class="attributes">
+                                <div class="likes"></div>
+                                <div class="nb_commentaries"> </div>
+                            </div>
+                            <div class="date">posted 10 november 1997 at 14:20</div>
+                        </div>
+                        <div class="commentaries_area">
+                            <div class="com1">
+                                <div class="com1_author">autor</div>
+                                <div class="com1_txt">NIIIIIIIIIICjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjE !</div>
+                                <div class="com1_date">11/07/1996</div>
+                            </div>
+                            <div class="com2">
+                                
+                                <!-- ... -->
+                                    
+                            </div>
 
-                    display_post_gallery();
-                ?>
+                            <!-- ... -->
+                            
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div id="foot">

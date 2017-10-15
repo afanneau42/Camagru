@@ -1,0 +1,115 @@
+.post_card {
+    padding: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 10px;
+    margin-bottom: 10px; 
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    border: 5px solid rgb(45,45,112);
+    box-shadow: 1px 1px 10px rgb(45,45,112);
+    border-radius: 40px;
+    display: flex;
+
+}
+
+.picture {
+    border: 1px solid black;
+    margin: 2.5%;
+    min-width: 40%;
+    width: 90%;
+    height: 90%;
+    background-image: url("ressources/pipi.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.text {
+    margin: 2.5%;
+    max-width: 40%;
+    width: 90%;
+    height: 90%;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    background-color: rgb(45,45,112);
+}
+
+.info {
+    margin: 2.5%;
+    width: 95%;
+    height: 25%;
+    border: 1px solid green;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.commentaries_area {
+    margin: 2.5%;
+    width: 95%;
+    height: 65%;
+    border: 1px solid green;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: yellow;
+}
+
+.com1 {
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    min-height: 25%;
+    border: 1px solid red;
+    background-color: white;
+    justify-content: space-around;
+}
+
+.com1_author {
+    margin: auto;
+    border-bottom: 1px solid white;
+    font-family: Solar_Bold;
+    color: yellow;
+    text-shadow: 2px 1px 1px orangered; 
+    font-size: 25px;
+    width: 90%;
+    text-align: center;
+}
+
+.com1_date {
+    color: grey;
+    width: 90%;
+    text-align: right;
+    margin: auto;
+}
+
+.com1_txt {
+    width: 90%;
+    margin: auto;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+.login {
+    margin: 2.5%;
+    font-family: Solar_Bold;
+    color: yellow;
+    text-shadow: 2px 1px 1px orangered;
+    text-decoration: none;
+    min-height: 1.5vw;
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+}
+
+.date {
+    text-align: right;
+    width: 90%;
+    margin: auto;
+    color: grey;
+}
