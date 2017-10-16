@@ -1,0 +1,96 @@
+.mid-center {
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 100%;
+    width: 80%;
+    background-image: url("http://www.nationaltrustimages.org.uk/media/3949/photorapher%20lead.jpg");
+    background-size:cover;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card{
+    margin-top: 3%;
+    margin-bottom: 10%;
+    background-color: white;
+    border: 5px solid rgb(45,45,112);
+    box-shadow: 1px 1px 10px rgb(45,45,112);
+    border-radius: 40px;
+    z-index: 100;
+    width: 700px;
+    min-width: 700px;;
+    min-height: 700px;
+    position: relative;
+    align-items: center;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.pictures{
+    margin: 5%;
+    margin-top: 3%;
+    margin-bottom: 10%;
+    background-color: white;
+    border: 5px solid rgb(45,45,112);
+    box-shadow: 1px 1px 10px rgb(45,45,112);
+    border-radius: 40px;
+    z-index: 100;
+    width: 400px;
+    min-width: 400px;
+    min-height: 700px;
+    position: relative;
+    align-items: center;
+    overflow: auto;
+}
+
+.video {
+    margin: 5%;
+    border: 5px solid rgb(45,45,112);
+    box-shadow: 1px 1px 10px rgb(45,45,112);
+    border-radius: 5px;
+    width: 500px;
+    height: 375px;
+}
+
+.div_filters {
+    padding: 5%;
+    width: 400px;
+    min-height: 5%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-around;
+    border: 3px solid rgb(45,45,112);
+    box-shadow: 1px 1px 10px rgb(45,45,112);
+
+}
+
+.filter_and_input {
+    
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.filter {
+    background-size:100px 100px;
+    min-height: 100px;
+    min-width: 50%;
+}
+
+.filter_input {
+    margin: auto;
+}
+
+.div_buttons{
+    margin: 5%;
+    display: flex;
+    justify-content: space-around;
+}
