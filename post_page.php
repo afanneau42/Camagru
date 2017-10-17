@@ -6,8 +6,8 @@
     include "functions/functions_db.php";
 
     $id = htmlspecialchars($_GET['id']);
-    $prep = $dbsql->prepare('SELECT COUNT(*) FROM likes WHERE picture_id=:picture_id');
-    $prep -> bindParam(':picture_id', $id);
+    $prep = $dbsql->prepare('SELECT COUNT(*) FROM post WHERE id=:id');
+    $prep -> bindParam(':id', $id);
     $prep->execute();
     $count = $prep->fetchAll();
 
