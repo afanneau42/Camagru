@@ -59,6 +59,15 @@
     $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '2', '1496924224');");
     $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '1', '1503212701');");
     
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '3', '1488688384');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '2', '1496924224');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '1', '1503212701');");
+    
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '3', '1488688384');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '2', '1496924224');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '1', '1503212701');");
+    
+
     /* likes inserts */
 
     $dbsql->query("INSERT INTO `likes` (`picture_id`, `author_id`) VALUES ('1', '3');");

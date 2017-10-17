@@ -51,23 +51,25 @@
         data = canvas.toDataURL('image/png');
       }
     
-      function createstartbutton() {
-        if (!document.getElementById('postbutton') && streaming == true)
-        {
-          var startbutton = document.createElement('button'),
-          startbutton_content = document.createTextNode('Take the picture !');
-          
-          startbutton.setAttribute('id', 'postbutton');
-
-          startbutton.appendChild(postbutton_content);
-          document.getElementById('card').appendChild(postbutton);
-          
-          document.body.insertBefore(postbutton, canvas);
+      function enablestartbutton() {
+        if (!document.getElementById('startbutton').hasAttribute('value') && streaming == true)
+        { 
+          startbutton.setAttribute('class', 'startbutton_enable');
+          startbutton.setAttribute('value', 'startbutton');
         }
       }
       
-      // startbutton.addEventListener('click', function(ev){
-      // createstartbutton();
+      document.getElementById("filter_input").onclick = function() {
+        enablestartbutton();
+      }
+
+      document.getElementById("filter_input2").onclick = function() {
+        enablestartbutton();
+      }
+
+      document.getElementById("filter_input3").onclick = function() {
+        enablestartbutton();
+      }
 
       startbutton.addEventListener('click', function(ev){
           takepicture();

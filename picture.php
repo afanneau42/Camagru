@@ -6,7 +6,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="index.css?version=51">
-        <link rel="stylesheet" type="text/css" href="picture.css?version=51">
+        <link rel="stylesheet" type="text/css" href="picture.css?version=53">
         <meta charset="utf-8">
         <title>Camagru</title>
     </head>
@@ -41,26 +41,26 @@
             <div class="mid-center" >
                 <div class="card" id="card">
                     <video class="video" id="video"></video>
+
                     
-                    
-                    <!-- <canvas id="canvas"></canvas> -->
+                    <canvas id="canvas" style="display: none;"></canvas>
                     <form method="post">
                         <div class="div_filters">
                             <div class="filter_and_input">
                                 <div class="filter" style="background-image: url('ressources/filter/masque.png');"></div>
-                                <input type="radio" class="filter_input" name="filter" value="masque"><br>
+                                <input id="filter_input" type="radio" class="filter_input" name="filter" value="masque"><br>
                             </div>
                             <div class="filter_and_input">
                                 <div class="filter" style="background-image: url('ressources/filter/joint.png');"></div>
-                                <input type="radio" class="filter_input" name="filter" value="joint"><br>
+                                <input id="filter_input2" type="radio" class="filter_input" name="filter" value="joint"><br>
                             </div>
                             <div class="filter_and_input">
                                 <div class="filter" style="background-image: url('ressources/filter/moustache.png');"></div>
-                                <input type="radio" class="filter_input" name="filter" value="masque"><br>
+                                <input id="filter_input3" type="radio" class="filter_input" name="filter" value="masque"><br>
                             </div>
                         </div>
                         <div class="div_buttons">
-                            <button id="startbutton">Take a picture</button>
+                            <button id="startbutton" class="startbutton_disable">Take a picture</button>
                             <p> or </p>
                             <button id="uploadbutton"> Upload </button>
                         </div>

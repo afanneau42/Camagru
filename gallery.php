@@ -7,7 +7,7 @@
     <head>
         <link rel="stylesheet" type="text/css" href="index.css?version=51">
         <link rel="stylesheet" type="text/css" href="connection.css?version=51">
-        <link rel="stylesheet" type="text/css" href="gallery.css?version=55">
+        <link rel="stylesheet" type="text/css" href="gallery.css?version=56">
         <meta charset="utf-8">
         <title>Camagru</title>
     </head>
@@ -40,11 +40,14 @@
         </div>
         <div id="mid">
             <div id="mid-center">
-                <?PHP
+                <div class="card_container">
+                    <?PHP
                     include "functions/f_display.php";
 
                     display_post_gallery();
-                ?>
+                    ?>
+                <!-- </div> -->
+
             </div>
         </div>
         <div id="foot">

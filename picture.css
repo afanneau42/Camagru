@@ -10,7 +10,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 .card{
@@ -60,7 +60,6 @@
 }
 
 .div_filters {
-    padding: 5%;
     width: 400px;
     min-height: 5%;
     border-radius: 5px;
@@ -93,4 +92,14 @@
     margin: 5%;
     display: flex;
     justify-content: space-around;
+}
+
+.startbutton_disable {
+    cursor: default;
+    filter: opacity(30%);
+}
+
+.startbutton_enable {
+    cursor: pointer;
+    filter: none;
 }

@@ -1,12 +1,37 @@
 <?PHP
     function display_post_gallery(){
         include "functions/functions_db.php";
-        
-        /* Request post table */
 
-        $prep = $dbsql->prepare('SELECT * FROM post');
-        $prep->execute();
-        $r = $prep->fetchAll();
+        $pre = $dbsql->prepare('SELECT COUNT(*) FROM post');
+        $pre->execute();
+        $r2 = $pre->fetchAll();
+        $post_nb = $r2[0]['COUNT(*)'];
+        if ($post_nb <= 10)
+        {
+            /* Request post table */
+
+            $pre2 = $dbsql->prepare('SELECT * FROM post ORDER BY creation_date ASC');
+            $pre2->execute();
+            $r = $pre2->fetchAll();
+        
+        }
+        else {
+            $page_nb = $post_nb/10 + 1;
+
+            $pre1 = $dbsql->prepare('SELECT * FROM post ORDER BY creation_date ASC LIMIT :limit1,:limit2');
+            $pre1 -> bindParam(':limit1', $post['page'] * 10 - 10);
+            if ($post['page'] == $page_nb)
+            {
+                $pre1 -> bindParam(':limit2', $page_nb);
+            }
+            else
+            {
+                $pre1 -> bindParam(':limit2', $post['page'] * 10);
+            }
+            $pr1->execute();
+            $r = $pre1->fetchAll();
+
+        }
 
         foreach ($r as $post){
 
@@ -96,6 +121,21 @@
                         </div>
                         </a>
                     </div>";
+        }
+        echo "</div>";
+        if ($page_nb > 10) {
+            echo "<div class='pagination'>";
+            $i = 0;
+            while ($i != $page_nb)
+            {
+                if ($i == $post['page'])
+                {
+                    echo "<a class='number_page_actual'>" . $i . "</a>";
+                }
+                else
+                    echo "<a class='number_page'>" . $i . "</a>";
+            }
+            echo "</div>";
         }
     }
 ?>

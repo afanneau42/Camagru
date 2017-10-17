@@ -115,3 +115,16 @@
     min-width: 50px;
     min-height: 100px;
 }
+
+.card_container {
+    width: 100%;
+    height: 85%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.pagination {
+    min-width: 20%;
+    justify-content: center;
+}
