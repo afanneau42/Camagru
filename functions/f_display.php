@@ -16,21 +16,25 @@
         
         }
         else {
-            $page_nb = $post_nb/10 + 1;
+            $page_nb = (int)($post_nb/10 + 1);
+            
+            if (!isset($_GET['page']))
+                $_GET['page'] = 1;
 
-            $pre1 = $dbsql->prepare('SELECT * FROM post ORDER BY creation_date ASC LIMIT :limit1,:limit2');
-            $pre1 -> bindParam(':limit1', $post['page'] * 10 - 10);
-            if ($post['page'] == $page_nb)
-            {
-                $pre1 -> bindParam(':limit2', $page_nb);
-            }
+            $post_begin = $_GET['page'] * 10 - 10;
+            if ($_GET['page'] == $page_nb)
+                $post_end = $post_nb;
             else
-            {
-                $pre1 -> bindParam(':limit2', $post['page'] * 10);
-            }
-            $pr1->execute();
-            $r = $pre1->fetchAll();
+                $post_end = $_GET['page'] * 10;
 
+            echo $post_begin;
+            echo $post_end;
+
+            $pre1 = $dbsql->prepare('SELECT * FROM post ORDER BY creation_date ASC LIMIT :limit1, :limit2');
+            $pre1->bindParam(':limit1', $post_begin);
+            $pre1->bindParam(':limit2', $post_end);
+            $pre1->execute();
+            $r = $pre1->fetchAll();
         }
 
         foreach ($r as $post){
@@ -123,17 +127,18 @@
                     </div>";
         }
         echo "</div>";
-        if ($page_nb > 10) {
+        if ($post_nb > 10) {
             echo "<div class='pagination'>";
             $i = 0;
             while ($i != $page_nb)
             {
-                if ($i == $post['page'])
+                $i = $i + 1;
+                if ($i == $_GET['page'])
                 {
-                    echo "<a class='number_page_actual'>" . $i . "</a>";
+                    echo "<a href='gallery.php?page=". $i ."' class='number_page_actual'>" . $i . "</a>";
                 }
                 else
-                    echo "<a class='number_page'>" . $i . "</a>";
+                    echo "<a href='gallery.php?page=". $i ."' class='number_page'>" . $i . "</a>";
             }
             echo "</div>";
         }

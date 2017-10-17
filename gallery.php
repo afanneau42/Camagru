@@ -2,6 +2,8 @@
     session_start();
     if (!isset($_SESSION['logged_on_user']) || $_SESSION['logged_on_user'] == "")
         header("Location:must_be_log.php");
+    if (!isset($_GET['page']))
+        $_GET['page'] = 1;
 ?>
 <html>
     <head>
