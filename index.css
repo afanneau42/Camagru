@@ -18,7 +18,6 @@ a {
 body {
     margin: 0;
     max-width: 100%;
-    height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -161,22 +160,17 @@ element.style {
 
 #mid {
     width: 100%;
-    height: 90%;
     background-color: yellow;
-    display : flex;
+    display: flex;
     justify-content: center;
-    overflow: auto;
+    flex: 1;
 }
 
 #mid-center {
     margin-left: 5%;
     margin-right: 5%;
-    height: 100%;
-    width: 80%;
+    width: 100%;
     display : flex;
     justify-content: center;
-    background-image: url("http://www.nationaltrustimages.org.uk/media/3949/photorapher%20lead.jpg");
-    background-size:cover;
-    width: 100%;
-    height: 100%;  
+    background-color: white;
 }

@@ -5,7 +5,7 @@
 ?>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="index.css?version=52">
+        <link rel="stylesheet" type="text/css" href="index.css?version=59">
         <meta charset="utf-8">
         <title>Camagru</title>
     </head>

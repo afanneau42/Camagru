@@ -5,8 +5,8 @@
 ?>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="index.css?version=51">
-        <link rel="stylesheet" type="text/css" href="picture.css?version=53">
+        <link rel="stylesheet" type="text/css" href="index.css?version=58">
+        <link rel="stylesheet" type="text/css" href="picture.css?version=59">
         <meta charset="utf-8">
         <title>Camagru</title>
     </head>

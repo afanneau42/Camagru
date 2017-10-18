@@ -16,9 +16,8 @@
 ?>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="index.css?version=51">
-        <link rel="stylesheet" type="text/css" href="connection.css?version=51">
-        <link rel="stylesheet" type="text/css" href="post.css?version=55">
+        <link rel="stylesheet" type="text/css" href="index.css?version=58">
+        <link rel="stylesheet" type="text/css" href="post.css?version=59">
         <meta charset="utf-8">
         <title>Camagru</title>
     </head>
@@ -68,6 +67,41 @@
                                 <div class="com1_txt">NIIIIIIIIIICjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjE !</div>
                                 <div class="com1_date">11/07/1996</div>
                             </div>
+                            <div class="com1">
+                                <div class="com1_author">autor</div>
+                                <div class="com1_txt">NIIIIIIIIIICjjjjjjjjjjjjjjjjjjj!</div>
+                                <div class="com1_date">11/07/1996</div>
+                            </div>
+                            <div class="com1">
+                                <div class="com1_author">autor</div>
+                                <div class="com1_txt">NIIIIIIIIIICjjjjjjjjjjjjjjjjjjj!</div>
+                                <div class="com1_date">11/07/1996</div>
+                            </div>
+                            <div class="com1">
+                                <div class="com1_author">autor</div>
+                                <div class="com1_txt">NIIIIIIIIIICjjjjjjjjjjjjjjjjjjj!</div>
+                                <div class="com1_date">11/07/1996</div>
+                            </div>
+                            <div class="com1">
+                                <div class="com1_author">autor</div>
+                                <div class="com1_txt">NIIIIIIIIIICjjjjjjjjjjjjjjjjjjj!</div>
+                                <div class="com1_date">11/07/1996</div>
+                            </div>
+                            <div class="com1">
+                                <div class="com1_author">autor</div>
+                                <div class="com1_txt">NIIIIIIIIIICjjjjjjjjjjjjjjjjjjj!</div>
+                                <div class="com1_date">11/07/1996</div>
+                            </div>
+                            <div class="com1">
+                                <div class="com1_author">autor</div>
+                                <div class="com1_txt">NIIIIIIIIIICjjjjjjjjjjjjjjjjjjj!</div>
+                                <div class="com1_date">11/07/1996</div>
+                            </div>
+                            <div class="com1">
+                                <div class="com1_author">autor</div>
+                                <div class="com1_txt">NIIIIIIIIIICjjjjjjjjjjjjjjjjjjj!</div>
+                                <div class="com1_date">11/07/1996</div>
+                            </div>
                             <div class="com2">
                                 
                                 <!-- ... -->
@@ -77,6 +111,12 @@
                             <!-- ... -->
                             
                         </div>
+                        <div class="com_input_div">
+                            <form action="create_com.php" method="post">
+                                <input class="com_input_text" placeholder="Write your comment ..." type="text" name="text"></input>
+                                <input class="com_input_submit" type="submit" value="submit" name="button"></input>
+                            </form>
+                        </div>    
                     </div>
                 </div>
             </div>
