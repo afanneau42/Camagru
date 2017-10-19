@@ -1,5 +1,7 @@
 <?PHP
-
+    session_start();
+    if (!empty($_SESSION['logged_on_user']))
+        $_SESSION['logged_on_user'] = '';
     /* Connexion */
     include "database.php";
     $dbsql = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);

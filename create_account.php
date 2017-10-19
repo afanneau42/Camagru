@@ -1,7 +1,7 @@
 <?PHP
     function create_acc() {
         include "functions/f_user.php";
-        if (htmlspecialchars($_POST["submit"]) === "Submit")
+        if (htmlspecialchars($_POST["submit"]) === "Submit" && strlen(htmlspecialchars($_POST['username'])) < 120 && strlen(htmlspecialchars($_POST['password'])) < 255 && strlen(htmlspecialchars($_POST['password-re'])) < 255 && strlen(htmlspecialchars($_POST['mail'])) < 120)
         {
             /* Check fields */
 

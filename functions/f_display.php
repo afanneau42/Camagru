@@ -145,4 +145,86 @@
         }
         echo "</div>";
     }
+
+    function display_comments($id) {
+        include "functions/functions_db.php";
+
+        /* Request comments on the post */
+
+        $prep = $dbsql->prepare('SELECT * FROM comment WHERE picture_id=:picture_id');
+        $prep -> bindParam(':picture_id', $id);
+        $prep->execute();
+        $comment = $prep->fetchAll();
+
+        /* Display comments on the post */
+
+        foreach ($comment as $r) {
+
+            $prep2 = $dbsql->prepare('SELECT * FROM user WHERE id=:id');
+            $prep2->bindParam(':id', $r['author_id']);
+            $prep2->execute();
+            $user = $prep2->fetchAll();
+
+            echo "
+                <div class='com'>
+                    <div class='com_author'>" . $user[0]['username'] . "</div>
+                    <div class='com_txt'>" . $r['txt'] . "</div>
+                </div>";
+        }
+    }
+
+    function display_post_info($id) {
+        include "functions/functions_db.php";
+        
+            /* Request info of the post */
+        
+            $prep = $dbsql->prepare('SELECT * FROM post WHERE id=:picture_id');
+            $prep -> bindParam(':picture_id', $id);
+            $prep->execute();
+            $post_info = $prep->fetchAll();
+
+            /* Request info of the author of the post */
+
+            $uid = $post_info[0]['author_id'];
+            $prep2 = $dbsql->prepare('SELECT * FROM user WHERE id=:id');
+            $prep2 -> bindParam(':id', $uid);
+            $prep2->execute();
+            $user = $prep2->fetchAll();
+
+            /* Request likes number of the post */
+        
+            $prep3 = $dbsql->prepare('SELECT COUNT(*) FROM likes WHERE picture_id=:picture_id');
+            $prep3 -> bindParam(':picture_id', $id);
+            $prep3->execute();
+            $post_likes = $prep3->fetchAll();
+
+            /* Request comments number of the post */
+        
+            $prep4 = $dbsql->prepare('SELECT COUNT(*) FROM comment WHERE picture_id=:picture_id');
+            $prep4 -> bindParam(':picture_id', $id);
+            $prep4->execute();
+            $post_comments = $prep4->fetchAll();
+
+            $date = date('d F Y \a\t H:i' , $post_info[0]['creation_date']);
+
+            if ($post_likes[0]['COUNT(*)'] == 0)
+                $likes_display = "<img id='vomi' src='./ressources/emoji_vomi.png'>";
+            else if ($post_likes[0]['COUNT(*)'] >= 1)
+                $likes_display = $post_likes[0]['COUNT(*)'] . " <img src='./ressources/like_red.png'>";
+
+            if ($post_comments[0]['COUNT(*)'] == 0)
+                $coms_display = "No <img src='./ressources/comments_icon.png'>";
+            else if ($post_comments[0]['COUNT(*)'] >= 1)
+                $coms_display = $post_comments[0]['COUNT(*)'] . " <img src='./ressources/comments_icon.png'>";
+
+            echo "
+                    <div class='login'>" . $user[0]['username'] . "</div>
+                    <div class='attributes'>
+                        <div class='likes'>" . $likes_display . "</div>
+                        <div class='nb_commentaries'>" . $coms_display . "</div>
+                        <div class='date'>posted " . $date . "</div>
+                        </div>
+                    ";
+
+    }
 ?>
