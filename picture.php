@@ -6,8 +6,9 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="index.css?version=58">
-        <link rel="stylesheet" type="text/css" href="picture.css?version=59">
+        <link rel="stylesheet" type="text/css" href="picture.css?version=64">
         <meta charset="utf-8">
+        <script src="https://use.fontawesome.com/5c9cd0ccac.js"></script>
         <title>Camagru</title>
     </head>
     <body>
@@ -27,15 +28,14 @@
                                 </div>
                                 <div id="div-core">
                                     <a href="gallery.php"><div class="div-core-txt">Gallery</div></a>
-                                </div>
-                                ';
+                                </div>';
                         }
                 ?>
             </div>
                 <div id="div-connexion">
                     <a href="logout.php"><div id="connexion">Logout</div></a>
                     <a href="profile.php"><div id="connexion">Profile</div></a>
-                </div>';
+                </div>
         </div>
         <div id="mid">
             <div class="mid-center" >
@@ -44,7 +44,7 @@
 
                     
                     <canvas id="canvas" style="display: none;"></canvas>
-                    <form method="post">
+                    <form method="post" id="form_filter">
                         <div class="div_filters">
                             <div class="filter_and_input">
                                 <div class="filter" style="background-image: url('ressources/filter/masque.png');"></div>
@@ -60,13 +60,21 @@
                             </div>
                         </div>
                         <div class="div_buttons">
-                            <button id="startbutton" class="startbutton_disable">Take a picture</button>
+                            <button id="startbutton" class="startbutton_disable" disabled>Take a picture</button>
+                        </form>
                             <p> or </p>
-                            <button id="uploadbutton"> Upload </button>
+                            <form action="upload.php" method="post" class="form_upload" enctype="multipart/form-data">
+                                <input name="upload" type="file" id="uploadbutton" class="uploadbutton"> </input>
+                                <input type="submit" value="Upload" name="submit"></input>
                         </div>
                     </form>
                 </div>
                 <div class="pictures">
+                    <?PHP
+                        include "functions/f_display.php";
+
+                        display_picture_user();
+                    ?>
                 </div>
             </div>
         </div>
@@ -75,6 +83,6 @@
                 <p id="txt">By afanneau 2017</p>
             </div>
         </div>
-        <script type="text/javascript" src="functions/take_picture.js"></script>
+        <script type="text/javascript" src="functions/take_picture.js?version=60"></script>
     </body>
 </html>

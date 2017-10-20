@@ -74,7 +74,7 @@
 }
 
 .post_picture {
-    background-image: url('./ressources/pipi.jpg');
+    /* background-image: url('./ressources/pipi.jpg'); */
     background-size: cover;
     box-shadow: 1px 1px 20px rgb(189, 189, 189);
 }

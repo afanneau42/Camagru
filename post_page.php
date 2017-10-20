@@ -17,7 +17,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="index.css?version=58">
-        <link rel="stylesheet" type="text/css" href="post.css?version=62">
+        <link rel="stylesheet" type="text/css" href="post.css?version=63">
         <meta charset="utf-8">
         <title>Camagru</title>
     </head>
@@ -51,7 +51,11 @@
         <div id="mid">
             <div id="mid-center">
                 <div class="post_card">
-                    <div class="picture"></div>
+                    <div class="picture" style="background-image: url(
+                        <?PHP
+                        echo "ressources/pictures/" . $_GET['id'] . $_GET['type'];                 
+                        ?>
+                        );"></div>
                     <div class="text">
                         <div class="info">
 

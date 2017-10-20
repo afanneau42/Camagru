@@ -35,7 +35,7 @@
                 <div id="div-connexion">
                     <a href="logout.php"><div id="connexion">Logout</div></a>
                     <a href="profile.php"><div id="connexion">Profile</div></a>
-                </div>';
+                </div>
         </div>
         <div id="mid">
             <div id="mid-center">

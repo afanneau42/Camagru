@@ -30,7 +30,8 @@
     $prep = $dbsql->prepare("CREATE TABLE IF NOT EXISTS post(
         id INT AUTO_INCREMENT PRIMARY KEY, 
         author_id INT NOT NULL, 
-        creation_date INT NOT NULL)");
+        creation_date INT NOT NULL,
+        type VARCHAR(10) NOT NULL)");
     $prep->execute(array($key));
 
     /* Likes table creation */
@@ -57,17 +58,17 @@
 
     /* Post inserts */
     
-    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '3', '1488688384');");
-    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '2', '1496924224');");
-    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '1', '1503212701');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '3', '1488688384', '.jpg');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '2', '1496924224', '.jpg');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '1', '1503212701', '.jpg');");
     
-    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '3', '1488688384');");
-    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '2', '1496924224');");
-    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '1', '1503212701');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '3', '1488688384', '.jpg');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '2', '1496924224', '.jpg');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '1', '1503212701', '.jpg');");
     
-    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '3', '1488688384');");
-    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '2', '1496924224');");
-    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`) VALUES (NULL, '1', '1503212701');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '3', '1488688384', '.jpg');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '2', '1496924224', '.jpg');");
+    $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '1', '1503212701', '.jpg');");
     
 
     /* likes inserts */

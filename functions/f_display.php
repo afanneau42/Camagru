@@ -31,7 +31,7 @@
                 else
                     $post_end = 10;
 
-                $pre1 = $dbsql->prepare('SELECT * FROM post ORDER BY creation_date ASC LIMIT :limit1, :limit2');
+                $pre1 = $dbsql->prepare('SELECT * FROM post ORDER BY creation_date DESC LIMIT :limit1, :limit2');
                 $pre1->bindParam(':limit1', $post_begin, PDO::PARAM_INT);
                 $pre1->bindParam(':limit2', $post_end, PDO::PARAM_INT);
                 $pre1->execute();
@@ -102,17 +102,18 @@
                 
                 /* Set timestamp to good format */
 
+                $url = "ressources/pictures/" . $post['id'] . $post['type'];
                 $date = date('d F Y \a\t H:i' , $post['creation_date']);
 
                 echo    "<div class='post_card'>
                             <div class='post_author'>" 
                                 . $user[0]['username'] .
                             "</div>
-                                <div class='post_picture'>
+                                <div class='post_picture' style='background-image: url($url);'>
                                     " . $like_button . "
                                 </div>
                             
-                            <a href='post_page.php?id=" . $post['id'] . "'>
+                            <a href='post_page.php?id=" . $post['id'] . "&type=" . $post["type"] . "'>
                             <div class='post_atributes'>
                                 <div class='post_like'> 
                                     " . $likes_display . "
@@ -226,5 +227,28 @@
                         </div>
                     ";
 
+    }
+
+    function display_picture_user() {
+        session_start();
+        include "functions/functions_db.php";
+        if (!empty($_SESSION['logged_on_user']))
+        {
+            $prep = $dbsql->prepare('SELECT * FROM post WHERE author_id=:id ORDER BY creation_date ASC');
+            $prep->bindParam(':id', $_SESSION['logged_on_user']);
+            $prep->execute();
+            $r = $prep->fetchAll();
+
+            foreach ($r as $pic) {
+                echo "<div class='picture_history'>
+                        <a href='delete_post.php?id=" . $pic['id'] . "'><i class='fa fa-times fa-2x' aria-hidden='true'></i></a>                        
+                        <div class='picture_background' style='background-image: url(ressources/pictures/" . $pic['id'];
+                if (file_exists("ressources/pictures/" . $pic['id'] . ".png"))
+                    echo ".png";
+                else if (file_exists("ressources/pictures/" .$pic['id'] . ".jpg"))
+                    echo ".jpg";
+                echo ");'></div></div>";
+            }
+        }
     }
 ?>

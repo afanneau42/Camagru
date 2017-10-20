@@ -52,10 +52,11 @@
       }
     
       function enablestartbutton() {
-        if (!document.getElementById('startbutton').hasAttribute('value') && streaming == true)
+        if (!document.getElementById('startbutton').hasAttribute('value') && !document.getElementById('form_filter').hasAttribute('action') && streaming == true)
         { 
           startbutton.setAttribute('class', 'startbutton_enable');
           startbutton.setAttribute('value', 'startbutton');
+          startbutton.disabled = false;
         }
       }
       

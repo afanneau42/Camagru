@@ -76,7 +76,7 @@
 }
 
 .picture {
-    border: 1px solid black;
+    box-shadow: 0 0 10px grey;
     margin: auto;
     width: 700px;
     height: 700px;
