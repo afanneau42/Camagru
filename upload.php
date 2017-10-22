@@ -14,9 +14,11 @@
     {
         if ($_FILES['upload']['size'] < 4000000 && $_FILES['upload']['error'] === 0 && !empty($_SESSION['logged_on_user']))
         {
+            $t = time();
+
             $prep = $dbsql->prepare('INSERT INTO post VALUES (NULL, :author_id, :c_time, :type);');
             $prep -> bindParam(':author_id', $_SESSION['logged_on_user']);
-            $prep -> bindParam(':c_time', time());
+            $prep -> bindParam(':c_time', $t);
             $prep -> bindParam(':type', $type);
             $prep->execute();
 

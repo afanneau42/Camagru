@@ -41,14 +41,32 @@
           canvas.setAttribute('width', width);
           canvas.setAttribute('height', height);
           streaming = true;
+          canvas.width = width;
+          canvas.height = height;
+
+
+          var ctx=canvas.getContext('2d');
+          var i;
+  
+          i=window.setInterval(function() {ctx.drawImage(video,5,5,width,height)},20);
+
         }
       }, false);
 
       function takepicture() {
-        canvas.width = width;
-        canvas.height = height;
-        canvas.getContext('2d').drawImage(video, 0, 0, width, height);
+        var filter = undefined;
         data = canvas.toDataURL('image/png');
+
+        
+
+        if(document.getElementById('filter_input').checked)
+          filter = "masque";
+        else if(document.getElementById('filter_input2').checked)
+          filter = "joint";
+        else if(document.getElementById('filter_input3').checked)
+          filter = "moustache";
+
+        loadXMLDoc(data, filter);
       }
     
       function enablestartbutton() {
@@ -59,9 +77,12 @@
           startbutton.disabled = false;
         }
       }
+
+      
       
       document.getElementById("filter_input").onclick = function() {
         enablestartbutton();
+        draw();
       }
 
       document.getElementById("filter_input2").onclick = function() {
@@ -72,9 +93,36 @@
         enablestartbutton();
       }
 
+      function draw() {
+        var ctx=canvas.getContext("2d");
+        var img=document.getElementById("masque");
+        ctx.drawImage(img,0,0);
+    };
+
       startbutton.addEventListener('click', function(ev){
           takepicture();
         ev.preventDefault();
       }, false);
     
+      function loadXMLDoc(data, filter) {
+        var xhr = new XMLHttpRequest();
+    
+        xhr.onreadystatechange = function () {
+          var DONE = 4; // readyState 4 means the request is done.
+          var OK = 200; // status 200 is a successful return.
+          if (xhr.readyState === DONE) {
+            if (xhr.status === OK) {
+              console.log(xhr.responseText); // 'This is the returned text.'
+            } 
+            else {
+              console.log('Error: ' + xhr.status); // An error occurred during the request.
+            }
+          }
+        };
+        
+        xhr.open('POST', 'functions/f_photomontage.php');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.send(encodeURI('data=' + data)+  encodeURI('&filter=' + filter));
+    }
+
     })();

@@ -52,7 +52,7 @@ body {
     overflow: auto;
 }
 
-.video {
+.video, canvas {
     margin: 5%;
     border: 5px solid rgb(45,45,112);
     box-shadow: 1px 1px 10px rgb(45,45,112);

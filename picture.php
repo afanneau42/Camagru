@@ -83,6 +83,6 @@
                 <p id="txt">By afanneau 2017</p>
             </div>
         </div>
-        <script type="text/javascript" src="functions/take_picture.js?version=60"></script>
+        <script type="text/javascript" src="functions/take_picture.js?version=65"></script>
     </body>
 </html>

@@ -9,11 +9,11 @@
     <head>
         <link rel="stylesheet" type="text/css" href="index.css?version=58">
         <link rel="stylesheet" type="text/css" href="connection.css?version=51">
-        <link rel="stylesheet" type="text/css" href="gallery.css?version=59">
+        <link rel="stylesheet" type="text/css" href="gallery.css?version=62">
         <meta charset="utf-8">
         <title>Camagru</title>
     </head>
-    <body>
+    <body id="body">
         <div id="top">
             <a href="index.php">
                 <div id="logo"></div>
@@ -57,5 +57,6 @@
                 <p id="txt">By afanneau 2017</p>
             </div>
         </div>
+        <script type="text/javascript" src="functions/gallery_infinite_scroll.js?version=65"></script>
     </body>
 </html>
