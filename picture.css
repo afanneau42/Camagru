@@ -134,3 +134,47 @@ body {
 i {
     color: red;
 }
+
+.preview_1 {
+    display: none;
+    position: relative;
+}
+.preview_2 {
+    display: none;
+    position: relative;
+}
+.preview_3 {
+    display: none;
+    position: relative;
+}
+
+.preview_1 {
+    bottom: 450px;
+    left: 175px;
+    width: 250px;
+    height: 250px;
+}
+
+.preview_2 {
+    bottom: 225px;
+    left: 325px;
+    width: 150px;
+    height: 150px;
+}
+
+.preview_3 {
+    bottom: 300px;
+    left: 225px;
+    width: 150px;
+    height: 150px;
+}
+
+.webcam {
+    max-height: 425px;
+}
+
+.video {
+    transform: rotateY(180deg);
+    -webkit-transform:rotateY(180deg); /* Safari and Chrome */
+    -moz-transform:rotateY(180deg); /* Firefox */
+}

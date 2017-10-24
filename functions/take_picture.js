@@ -43,13 +43,6 @@
           streaming = true;
           canvas.width = width;
           canvas.height = height;
-
-
-          var ctx=canvas.getContext('2d');
-          var i;
-  
-          i=window.setInterval(function() {ctx.drawImage(video,5,5,width,height)},20);
-
         }
       }, false);
 
@@ -82,15 +75,23 @@
       
       document.getElementById("filter_input").onclick = function() {
         enablestartbutton();
-        draw();
+        document.getElementById("preview_1").setAttribute('style', 'display:block;');
+        document.getElementById("preview_2").setAttribute('style', 'display:hiddden;');
+        document.getElementById("preview_3").setAttribute('style', 'display:hidden;');
       }
 
       document.getElementById("filter_input2").onclick = function() {
         enablestartbutton();
+        document.getElementById("preview_1").setAttribute('style', 'display:hiddden;');
+        document.getElementById("preview_2").setAttribute('style', 'display:block;');
+        document.getElementById("preview_3").setAttribute('style', 'display:hiddden;');
       }
 
       document.getElementById("filter_input3").onclick = function() {
         enablestartbutton();
+        document.getElementById("preview_1").setAttribute('style', 'display:hiddden;');
+        document.getElementById("preview_2").setAttribute('style', 'display:hiddden;');
+        document.getElementById("preview_3").setAttribute('style', 'display:block;');
       }
 
       function draw() {

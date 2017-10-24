@@ -2,6 +2,7 @@
     session_start();
     if (!isset($_SESSION['logged_on_user']))
         $_SESSION['logged_on_user'] = '';
+    include "config/setup.php";
 ?>
 <html>
     <head>

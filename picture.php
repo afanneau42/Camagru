@@ -6,7 +6,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="index.css?version=58">
-        <link rel="stylesheet" type="text/css" href="picture.css?version=64">
+        <link rel="stylesheet" type="text/css" href="picture.css?version=65">
         <meta charset="utf-8">
         <script src="https://use.fontawesome.com/5c9cd0ccac.js"></script>
         <title>Camagru</title>
@@ -38,12 +38,17 @@
                 </div>
         </div>
         <div id="mid">
-            <div class="mid-center" >
+            <div class="mid-center">
                 <div class="card" id="card">
+                <div class="webcam">
                     <video class="video" id="video"></video>
-
+                        
                     
                     <canvas id="canvas" style="display: none;"></canvas>
+                    <img class="preview_1" id="preview_1" src="ressources/filter/masque.png"></img>
+                    <img class="preview_2" id="preview_2" src="ressources/filter/joint.png"></img>
+                    <img class="preview_3" id="preview_3" src="ressources/filter/moustache.png"></img>
+                    </div>
                     <form method="post" id="form_filter">
                         <div class="div_filters">
                             <div class="filter_and_input">
@@ -83,6 +88,6 @@
                 <p id="txt">By afanneau 2017</p>
             </div>
         </div>
-        <script type="text/javascript" src="functions/take_picture.js?version=65"></script>
+        <script type="text/javascript" src="functions/take_picture.js?version=66"></script>
     </body>
 </html>
