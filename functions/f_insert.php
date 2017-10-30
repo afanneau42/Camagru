@@ -1,6 +1,6 @@
 <?PHP
     
-    function insert_user($dbh, $id, $username, $passwordd, $email, $rank)
+    function insert_user($dbh, $id, $username, $password, $email, $rank)
     {
         $sql = $dbh->prepare("
         INSERT INTO user

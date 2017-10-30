@@ -2,9 +2,10 @@ window.onscroll = function() {myFunction()};
     var page = 0;
 function myFunction() {
 
-    console.log(document.body.scrollHeight - 1000);
-    if (document.body.scrollTop > (document.body.scrollHeight * 0.1) || document.documentElement.scrollTop > document.body.scrollHeight - 1000) {
-        console.log("test");
+    console.log(document.body.offsetHeight);
+    console.log(document.body.clientHeight);
+    if (document.body.scrollTop > ((document.body.offsetHeight - document.body.clientHeight) * 0.8)){
+        console.log(document.body.scrollTop);
         page += 1;
         var i = 11;
         while (i <= page * 10)
