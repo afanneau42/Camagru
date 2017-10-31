@@ -10,9 +10,11 @@
         $prep = $dbsql->prepare('SELECT * FROM user WHERE username = :username');
         $result = $prep->execute(array('username' => htmlspecialchars($_POST['username'])));
         $array = $prep->fetchAll();
+
         foreach ($array as $user)
         {
-            if ($user['password'] == $pw_h && $user['active'] == 0){
+            
+            if ($user['password'] == $pw_h && $user['active'] === '0'){
                 $_SESSION['logged_on_user'] = $user['id'];
                 $_SESSION['grade'] = $user['grade'];
                 header("Location: index.php");

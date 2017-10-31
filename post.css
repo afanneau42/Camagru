@@ -80,8 +80,7 @@
     margin: auto;
     width: 700px;
     height: 700px;
-    background-image: url("ressources/pipi.jpg");
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 

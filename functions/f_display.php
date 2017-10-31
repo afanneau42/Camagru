@@ -156,7 +156,7 @@
             $pre->execute();
             $r2 = $pre->fetchAll();
             $post_nb = $r2[0]['COUNT(*)'];
-            if ($post_nb <= 10)
+            if ($post_nb <= 9)
             {
                 /* Request post table */
 
@@ -166,16 +166,16 @@
             
             }
             else {
-                $page_nb = (int)($post_nb/10 + 1);
+                $page_nb = (int)($post_nb/9 + 1);
                 
                 if ($_GET['page'] > $page_nb)
                     $_GET['page'] = 1;
                 if (!isset($_GET['page']))
                     $_GET['page'] = 1;
 
-                $post_begin = $_GET['page'] * 10 - 10;
+                $post_begin = $_GET['page'] * 9 - 9;
                 if ($_GET['page'] == $page_nb)
-                    $post_end = $post_nb - (($page_nb - 1)*10);
+                    $post_end = $post_nb - (($page_nb - 1)*9);
                 else
                     $post_end = 10;
 
@@ -221,7 +221,7 @@
                 /* Set difference if no commentaries */
 
                 if ($coms[0]['COUNT(*)'] == 0)
-                    $coms_display = "No <img src='./ressources/comments_icon.png'>";
+                    $coms_display = "0 <img src='./ressources/comments_icon.png'>";
                 else if ($coms[0]['COUNT(*)'] >= 1)
                     $coms_display = $coms[0]['COUNT(*)'] . " <img src='./ressources/comments_icon.png'>";
                 
@@ -255,7 +255,7 @@
                 $url = "ressources/pictures/" . $post['id'] . $post['type'];
                 $date = date('d F Y \a\t H:i' , $post['creation_date']);
 
-                if ($elem <= 10)
+                if ($elem <= 9)
                     echo    "<div class='post_card' id='post_card_".$elem."'>";
                 else
                     echo    "<div class='card_hidden' id='post_card_".$elem."'>";

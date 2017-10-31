@@ -11,7 +11,7 @@
         <link rel="stylesheet" type="text/css" href="connection.css?version=51">
         <link rel="stylesheet" type="text/css" href="gallery.css?version=62">
         <meta charset="utf-8">
-        <script type="text/javascript" src="functions/gallery_infinite_scroll.js?version=67"></script>
+        <script type="text/javascript" src="functions/gallery_infinite_scroll.js?version=68"></script>
         <title>Camagru</title>
     </head>
     <body>
@@ -58,6 +58,5 @@
                 <p id="txt">By afanneau 2017</p>
             </div>
         </div>
-        
     </body>
 </html>

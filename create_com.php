@@ -9,7 +9,7 @@
 
             /* Insert new comment into db */
 
-            $prep = $dbsql->prepare('INSERT INTO comment VALUES (:picture_id, :uid, :txt)');
+            $prep = $dbsql->prepare('INSERT INTO comment VALUES (NULL, :picture_id, :uid, :txt)');
             $prep -> bindParam(':picture_id', $_GET['id']);
             $prep -> bindParam(':uid', $_SESSION['logged_on_user']);
             $prep -> bindParam(':txt', $_POST['text']);

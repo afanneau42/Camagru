@@ -77,7 +77,7 @@
                              echo $id;
                              ?>
                               " method="post">
-                                <input class="com_input_text" placeholder="Write your comment ..." type="text" name="text"></input>
+                                <input class="com_input_text" placeholder="Write your comment (Max 250 characters) ..." type="text" name="text"></input>
                                 <input class="com_input_submit" type="submit" value="submit" name="button"></input>
                             </form>
                         </div>    
