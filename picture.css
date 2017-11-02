@@ -121,13 +121,13 @@ body {
     margin-bottom: 25px;
     margin-top: 25px;
     width: 350px;
-    height: 350px;
+    height: 300px;
     box-shadow: 0px 0px 10px grey;
 }
 
 .picture_background {
     width: 300px;
-    min-height: 300px;
+    min-height: 225px;
     background-size: cover;
     margin: auto
 }
@@ -152,22 +152,28 @@ i {
 .preview_1 {
     bottom: 450px;
     left: 150px;
-    width: 250px;
-    height: 250px;
+    -webkit-transform: scale(1.5); /* Saf3.1+, Chrome */
+    -moz-transform: scale(1.5); /* FF3.5+ */
+     -ms-transform: scale(1.5); /* IE9 */
+      -o-transform: scale(1.5); /* Opera 10.5+ */
+         transform: scale(1.5);
 }
 
 .preview_2 {
-    bottom: 225px;
-    left: 300px;
-    width: 150px;
-    height: 150px;
+    bottom: 400px;
+    left: 100px;
+    -webkit-transform: scale(0.4); /* Saf3.1+, Chrome */
+    -moz-transform: scale(0.4); /* FF3.5+ */
+     -ms-transform: scale(0.4); /* IE9 */
+      -o-transform: scale(0.4); /* Opera 10.5+ */
+         transform: scale(0.4);
 }
 
 .preview_3 {
-    bottom: 300px;
-    left: 200px;
-    width: 150px;
-    height: 150px;
+    bottom: 406px;
+    left: 5px;
+    width: 500px;
+    height: 375px;
 }
 
 .webcam {

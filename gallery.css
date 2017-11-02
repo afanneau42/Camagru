@@ -32,9 +32,9 @@
 }
 
 .post_picture {
-    max-width: 90%;
+    max-width: 100%;
     min-height: 75%;
-    margin-left: 5%;
+    /* margin-left: 5%; */
 }
 
 

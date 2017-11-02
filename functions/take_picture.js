@@ -43,15 +43,18 @@
           streaming = true;
           canvas.width = width;
           canvas.height = height;
+          document.getElementById('filter_input').disabled = false;
+          document.getElementById('filter_input2').disabled = false;
+          document.getElementById('filter_input3').disabled = false;
         }
       }, false);
 
       function takepicture() {
         var filter = undefined;
-        data = canvas.toDataURL('image/png');
-        cosole.log(data);
+        var data = undefined;
+        canvas.getContext('2d').drawImage(video, 0, 0, width, height);
 
-        
+        data = canvas.toDataURL('image/png');
 
         if(document.getElementById('filter_input').checked)
           filter = "masque";
@@ -59,6 +62,8 @@
           filter = "joint";
         else if(document.getElementById('filter_input3').checked)
           filter = "moustache";
+
+          console.log(data);
 
         loadXMLDoc(data, filter);
       }
@@ -114,7 +119,13 @@
           var OK = 200; // status 200 is a successful return.
           if (xhr.readyState === DONE) {
             if (xhr.status === OK) {
-              console.log(xhr.responseText); // 'This is the returned text.'
+              var script = document.createElement("script");
+              var node = document.createTextNode(xhr.responseText);
+
+              script.setAttribute("type", "text/javascript");
+              // script.setAttribute("src", "functions/update_picture.js");
+              script.appendChild(node);
+              document.body.appendChild(script); // 'This is the returned text.'
             } 
             else {
               console.log('Error: ' + xhr.status); // An error occurred during the request.
@@ -123,7 +134,7 @@
         };
         
         xhr.open('POST', 'functions/f_photomontage.php');
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=iso-8859-1');
         xhr.send(encodeURI('data=' + data)+  encodeURI('&filter=' + filter));
     }
 

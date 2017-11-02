@@ -383,10 +383,12 @@
             $r = $prep->fetchAll();
 
             foreach ($r as $pic) {
-                echo "<div class='picture_history'>
-                        <a href='delete_post.php?id=" . $pic['id'] . "'><i class='fa fa-times fa-2x' aria-hidden='true'></i></a>                        
+                echo "<div class='picture_history' id='pic_" . $pic['id'] . "'>
+                    "        
+                // <a href='delete_post.php?id=" . $pic['id'] . "'><i class='fa fa-times fa-2x' aria-hidden='true'></i></a>                        
+                        ."<a><i class='fa fa-times fa-2x' aria-hidden='true'></i></a>
                         <a href='post_page.php?id=" . $pic['id'] . "&type=" . $pic['type'] . "'><div class='picture_background' style='background-image: url(ressources/pictures/" . $pic['id']. $pic['type'];
-                echo ");1'></div></a></div>";
+                echo ");'></div></a></div>";
             }
         }
     }

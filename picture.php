@@ -6,7 +6,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="index.css?version=58">
-        <link rel="stylesheet" type="text/css" href="picture.css?version=65">
+        <link rel="stylesheet" type="text/css" href="picture.css?version=69">
         <meta charset="utf-8">
         <script src="https://use.fontawesome.com/5c9cd0ccac.js"></script>
         <title>Camagru</title>
@@ -53,15 +53,15 @@
                         <div class="div_filters">
                             <div class="filter_and_input">
                                 <div class="filter" style="background-image: url('ressources/filter/masque.png');"></div>
-                                <input id="filter_input" type="radio" class="filter_input" name="filter" value="masque"><br>
+                                <input id="filter_input" type="radio" class="filter_input" name="filter" value="masque" disabled><br>
                             </div>
                             <div class="filter_and_input">
                                 <div class="filter" style="background-image: url('ressources/filter/joint.png');"></div>
-                                <input id="filter_input2" type="radio" class="filter_input" name="filter" value="joint"><br>
+                                <input id="filter_input2" type="radio" class="filter_input" name="filter" value="joint" disabled><br>
                             </div>
                             <div class="filter_and_input">
                                 <div class="filter" style="background-image: url('ressources/filter/moustache.png');"></div>
-                                <input id="filter_input3" type="radio" class="filter_input" name="filter" value="masque"><br>
+                                <input id="filter_input3" type="radio" class="filter_input" name="filter" value="masque" disabled><br>
                             </div>
                         </div>
                         <div class="div_buttons">
@@ -74,7 +74,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="pictures">
+                <div class="pictures" id="pictures">
                     <?PHP
                         include "functions/f_display.php";
 
@@ -88,6 +88,8 @@
                 <p id="txt">By afanneau 2017</p>
             </div>
         </div>
-        <script type="text/javascript" src="functions/take_picture.js?version=68"></script>
+        <script type="text/javascript" src="functions/take_picture.js?version=69"></script>
+        <script type="text/javascript" src="functions/update_picture.js?version=69"></script>
+        <script type="text/javascript" src="functions/del_picture.js?version=69"></script>
     </body>
 </html>
