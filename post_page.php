@@ -53,7 +53,10 @@
                 <div class="post_card">
                     <div class="picture" style="background-image: url(
                         <?PHP
-                        echo "ressources/pictures/" . $_GET['id'] . $_GET['type'];                 
+                            if (file_exists("ressources/pictures/" . $_GET['id'] . $_GET['type']))
+                                echo "ressources/pictures/" . $_GET['id'] . $_GET['type'];
+                            else
+                                echo "ressources/error.png";
                         ?>
                         );"></div>
                     <div class="text">

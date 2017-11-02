@@ -82,7 +82,7 @@
         $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '4', '1503412701', '.jpeg');");
         
         $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '5', '1453615721', '.jpeg');");
-        $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '5', '1600000000', '.jpeg');");
+        $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '5', '1500000000', '.jpeg');");
         
 
         /* likes inserts */

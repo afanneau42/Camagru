@@ -1,14 +1,13 @@
 <?PHP
-
-
     $data = $_POST['data'];
     
     $data = substr($data, 22);
+    // $data = substr($data, 0, strpos($data, "UnQMAA")) . "UnQMAA";
     echo $data;
     $data = base64_decode($data);
     $key = hash("whirlpool", rand());
     
-        // file_put_contents("../ressources/" . $key . ".png", $data);
+    file_put_contents("../ressources/" . $key . ".png", $data);
 
     // $source = imagecreatefrompng("../ressources/filter/" . $_POST['filter'] . ".png"); // Le logo est la source
     $destination = imagecreatefromstring($data); // La photo est la destination
@@ -27,6 +26,6 @@
     // imagecopymerge($destination, $source, $destination_x, $destination_y, 0, 0, $largeur_source, $hauteur_source, 60);
      
     // On affiche l'image de destination qui a été fusionnée avec le logo
-    imagejpeg($destination, "../ressources/pictures/test.jpg");
+    imagejpeg($destination, "../ressources/pictures/test.jpeg");
 
 ?>

@@ -49,6 +49,7 @@
       function takepicture() {
         var filter = undefined;
         data = canvas.toDataURL('image/png');
+        cosole.log(data);
 
         
 
