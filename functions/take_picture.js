@@ -5,6 +5,7 @@
           cover        = document.querySelector('#cover'),
           canvas       = document.querySelector('#canvas'),
           startbutton  = document.querySelector('#startbutton'),
+          uploadbutton = document.querySelector('#uploadbutton');
           data = undefined,
           width = 320,
           height = 0;
@@ -74,10 +75,9 @@
           startbutton.setAttribute('class', 'startbutton_enable');
           startbutton.setAttribute('value', 'startbutton');
           startbutton.disabled = false;
+          document.getElementById("uploadbutton").disabled = false;
         }
       }
-
-      
       
       document.getElementById("filter_input").onclick = function() {
         enablestartbutton();
@@ -110,6 +110,24 @@
           takepicture();
         ev.preventDefault();
       }, false);
+
+      document.addEventListener("DOMContentLoaded", function(){
+        document.getElementById('form_upload').addEventListener("submit", function(e){
+          e.preventDefault()
+          var form = e.target
+          var data = new FormData(form)
+          
+          var request = new XMLHttpRequest()
+          
+          request.onreadystatechange = function(){
+            console.log(request.responseText);
+          }
+          
+          request.open('POST', 'upload.php')
+          request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=iso-8859-1');
+          request.send(encodeURI('data=' + data));
+        })
+      })
     
       function loadXMLDoc(data, filter) {
         var xhr = new XMLHttpRequest();

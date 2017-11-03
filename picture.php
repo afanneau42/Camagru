@@ -65,11 +65,11 @@
                             </div>
                         </div>
                         <div class="div_buttons">
-                            <button id="startbutton" class="startbutton_disable" disabled>Take a picture</button>
+                            <button id="startbutton" disabled>Take a picture</button>
                         </form>
                             <p> or </p>
-                            <form action="upload.php" method="post" class="form_upload" enctype="multipart/form-data">
-                                <input name="upload" type="file" id="uploadbutton" class="uploadbutton"> </input>
+                            <form id="form_upload" action="upload.php" method="post" class="form_upload" enctype="multipart/form-data">
+                                <input name="upload" type="file" id="uploadbutton" class="uploadbutton" disabled> </input>
                                 <input type="submit" value="Upload" name="submit"></input>
                         </div>
                     </form>

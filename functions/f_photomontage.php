@@ -60,7 +60,7 @@
      
     // On affiche l'image de destination qui a été fusionnée avec le logo
 
-    $t = time();
+    $t = time() + 3600;
     $type = ".jpeg";
 
     $prep = $dbsql->prepare('INSERT INTO post VALUES (NULL, :author_id, :c_time, :type);');

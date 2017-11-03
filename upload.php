@@ -2,18 +2,20 @@
     if (!isset($_SESSION))
         session_start();
 
+    echo $_POST['data'][0];
+
     include "functions/functions_db.php";
     $type = 0;
     
-    if ($_FILES['upload']['type'] === "image/png")
+    if ($_POST['data']['upload']['type'] === "image/png")
         $type = ".png";
-    else if ($_FILES['upload']['type'] === "image/jpg")
+    else if ($_POST['data']['upload']['type'] === "image/jpg")
         $type = ".jpg";
-    else if ($_FILES['upload']['type'] === "image/jpeg")
+    else if ($_POST['data']['upload']['type'] === "image/jpeg")
         $type = ".jpeg";
     if ($type !== 0)
     {
-        if ($_FILES['upload']['size'] < 4000000 && $_FILES['upload']['error'] === 0 && !empty($_SESSION['logged_on_user']))
+        if ($_POST['data']['upload']['size'] < 4000000 && $_POST['data']['upload']['error'] === 0 && !empty($_SESSION['logged_on_user']))
         {
             $t = time();
 
@@ -27,17 +29,13 @@
             $prep2->execute();
             $post = $prep2->fetchAll();
             
-            if (move_uploaded_file($_FILES['upload']['tmp_name'], "ressources/pictures/" . $post[0]['id'] . $type))
+            if (move_uploaded_file($_POST['data']['upload']['tmp_name'], "ressources/pictures/" . $post[0]['id'] . $type))
             {
                 if (!empty($_SERVER['HTTP_REFERER']))
-                    header("Location: ".$_SERVER['HTTP_REFERER']);
-                else
-                    header("Location: index.php");
+                    echo "nice";
             }
         }
-        else
-            header("Location: index.php");
+
     }
-    else
-        header("Location: index.php");
+
 ?>
