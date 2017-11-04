@@ -14,6 +14,7 @@
     if ($count[0]['COUNT(*)'] == 0)
         header("Location:index.php");
 ?>
+<!doctype html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="index.css?version=58">

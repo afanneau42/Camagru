@@ -3,6 +3,7 @@
     if (!isset($_SESSION['logged_on_user']) || $_SESSION['logged_on_user'] == "")
         header("Location:must_be_log.php");
 ?>
+<!doctype html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="index.css?version=58">

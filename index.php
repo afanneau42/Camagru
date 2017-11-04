@@ -4,6 +4,7 @@
         $_SESSION['logged_on_user'] = '';
     include "config/setup.php";
 ?>
+<!doctype html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="index.css?version=59">

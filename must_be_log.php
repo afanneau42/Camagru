@@ -5,6 +5,7 @@
     if (!isset($_SESSION['error']))
         $_SESSION['error'] = 0;
 ?>
+<!doctype html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="connection.css?version=54">

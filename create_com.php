@@ -1,7 +1,10 @@
 <?PHP
         include "functions/functions_db.php";
         session_start();
-        header("Location: " . $_SERVER['HTTP_REFERER']);
+        if ($_SERVER['HTTP_REFERER'])
+            header("Location: " . $_SERVER['HTTP_REFERER']);
+        else
+            header("Location: index.php");
         if (isset($_SESSION['logged_on_user']) && $_SESSION['logged_on_user'] != '' && $_POST['text'] != '' && strlen($_POST['text']) < 250)
         {
 

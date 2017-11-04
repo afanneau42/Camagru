@@ -4,7 +4,7 @@
         header("Location:index.php");
     }
 ?>
-
+<!doctype html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="index.css?version=53">

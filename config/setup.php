@@ -5,7 +5,10 @@
         $_SESSION['logged_on_user'] = '';
     /* Connexion */
     include "database.php";
-    include "functions/f_insert.php";
+    if (file_exists("functions/f_insert.php"))
+        include "functions/f_insert.php";
+    else if (file_exists("../functions/f_insert.php"))
+        include "../functions/f_insert.php";
     $dbsql = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD);
     $dbsql->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 

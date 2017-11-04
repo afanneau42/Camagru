@@ -1,8 +1,7 @@
 window.onscroll = function() {myFunction()};
     var page = 0;
 function myFunction() {
-
-    if (document.body.scrollTop > ((document.body.offsetHeight - document.body.clientHeight) * 0.7)){
+    if (document.body.scrollTop > ((document.body.offsetHeight - document.body.clientHeight) * 0.2)){
         console.log(document.body.scrollTop);
         page += 1;
         var i = 10;

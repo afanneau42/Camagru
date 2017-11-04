@@ -5,6 +5,7 @@
     if (!isset($_GET['page']))
         $_GET['page'] = 1;
 ?>
+<!doctype html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="index.css?version=58">
@@ -49,8 +50,6 @@
 
                     display_post_gallery();
                     ?>
-                <!-- </div> -->
-
             </div>
         </div>
         <div id="foot">
