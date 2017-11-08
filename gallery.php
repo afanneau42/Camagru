@@ -17,9 +17,6 @@
     </head>
     <body>
         <div id="top">
-            <a href="index.php">
-                <div id="logo"></div>
-            </a>
             <div id="text-logo-div">
                 <a href="index.php" id="text-logo">Camagru</a>
             </div>

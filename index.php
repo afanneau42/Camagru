@@ -7,15 +7,12 @@
 <!doctype html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="index.css?version=59">
+        <link rel="stylesheet" type="text/css" href="index.css?version=60">
         <meta charset="utf-8">
         <title>Camagru</title>
     </head>
     <body>
         <div id="top">
-            <a href="index.php">
-                <div id="logo"></div>
-            </a>
             <div id="text-logo-div">
                 <a href="index.php" id="text-logo">Camagru</a>
             </div>

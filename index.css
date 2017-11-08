@@ -91,16 +91,6 @@ body {
     min-height: 4vw;
 }
 
-#logo {
-    background-image: url(https://icon-icons.com/icons2/426/PNG/512/Cam_camera_1112px_1195275_42267.png);
-    background-size:contain;
-    background-repeat:no-repeat;
-    min-height: 100%;
-    
-    max-width: 8vw;
-    width: 6vw;
-}
-
 #txt {
     font-family: Solar_Bold;
     color: yellow;
@@ -111,7 +101,7 @@ body {
     margin: 0;
 }
 
-@media (max-width: 1400px) {
+@media (min-width: 800px) and (max-width: 1400px) {
     #text-logo{
         min-height: 4vw;
         font-size: 60px;
@@ -131,13 +121,34 @@ body {
         min-height: 5vw;
     }
 
-    #logo {
-        background-image: url(https://icon-icons.com/icons2/426/PNG/512/Cam_camera_1112px_1195275_42267.png);
-        background-size:contain;
-        background-repeat:no-repeat;
-        min-height: 100%;
-        max-width: 100%;
-        width: 100px;
+        #txt {
+        font-family: Solar_Bold;
+        color: yellow;
+        text-shadow: 2px 1px 1px orangered;
+        text-decoration: none;
+        min-height: 1.5vw;
+        font-size: 20px; 
+    }
+}
+
+@media (max-width: 800px) {
+    #text-logo{
+        min-height: 4vw;
+        font-size: 40px;
+    }
+
+    #connexion , .div-core-txt{
+        min-height: 2vw;
+        font-size: 20px; 
+    }
+
+    #inscription {
+        min-height: 1.3vw;
+        font-size: 10px; 
+    }
+
+    #text-logo-div {
+        min-height: 5vw;
     }
 
         #txt {
