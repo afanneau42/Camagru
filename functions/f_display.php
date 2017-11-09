@@ -166,16 +166,16 @@
             
             }
             else {
-                $page_nb = (int)($post_nb/9 + 1);
+                $page_nb = (int)($post_nb/3 + 1);
                 
                 if ($_GET['page'] > $page_nb)
                     $_GET['page'] = 1;
                 if (!isset($_GET['page']))
                     $_GET['page'] = 1;
 
-                $post_begin = $_GET['page'] * 9 - 9;
+                $post_begin = $_GET['page'] * 3 - 3;
                 if ($_GET['page'] == $page_nb)
-                    $post_end = $post_nb - (($page_nb - 1)*9);
+                    $post_end = $post_nb - (($page_nb - 1)*3);
                 else
                     $post_end = 10;
 
@@ -255,7 +255,7 @@
                 $url = "ressources/pictures/" . $post['id'] . $post['type'];
                 $date = date('d F Y \a\t H:i' , $post['creation_date']);
 
-                if ($elem <= 9)
+                if ($elem <= 12)
                     echo    "<div class='post_card' id='post_card_".$elem."'>";
                 else
                     echo    "<div class='card_hidden' id='post_card_".$elem."'>";

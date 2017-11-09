@@ -160,8 +160,8 @@ i {
 }
 
 .preview_2 {
-    bottom: 400px;
-    left: 100px;
+    bottom: 402px;
+    left: 99px;
     -webkit-transform: scale(0.4); /* Saf3.1+, Chrome */
     -moz-transform: scale(0.4); /* FF3.5+ */
      -ms-transform: scale(0.4); /* IE9 */
@@ -170,7 +170,7 @@ i {
 }
 
 .preview_3 {
-    bottom: 406px;
+    bottom: 410px;
     left: 5px;
     width: 500px;
     height: 375px;

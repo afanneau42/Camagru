@@ -7,7 +7,7 @@
           startbutton  = document.querySelector('#startbutton'),
           uploadbutton = document.querySelector('#uploadbutton');
           data = undefined,
-          width = 320,
+          width = 1080,
           height = 0;
     
       navigator.getMedia = ( navigator.getUserMedia ||
@@ -64,8 +64,6 @@
         else if(document.getElementById('filter_input3').checked)
           filter = "moustache";
 
-          console.log(data);
-
         loadXMLDoc(data, filter);
       }
     
@@ -84,6 +82,7 @@
         document.getElementById("preview_1").setAttribute('style', 'display:block;');
         document.getElementById("preview_2").setAttribute('style', 'display:hiddden;');
         document.getElementById("preview_3").setAttribute('style', 'display:hidden;');
+        document.getElementById("filter_upload").setAttribute('value', 'masque');
       }
 
       document.getElementById("filter_input2").onclick = function() {
@@ -91,6 +90,7 @@
         document.getElementById("preview_1").setAttribute('style', 'display:hiddden;');
         document.getElementById("preview_2").setAttribute('style', 'display:block;');
         document.getElementById("preview_3").setAttribute('style', 'display:hiddden;');
+        document.getElementById("filter_upload").setAttribute('value', 'joint');
       }
 
       document.getElementById("filter_input3").onclick = function() {
@@ -98,6 +98,7 @@
         document.getElementById("preview_1").setAttribute('style', 'display:hiddden;');
         document.getElementById("preview_2").setAttribute('style', 'display:hiddden;');
         document.getElementById("preview_3").setAttribute('style', 'display:block;');
+        document.getElementById("filter_upload").setAttribute('value', 'moustache');
       }
 
       function draw() {

@@ -35,15 +35,15 @@
     // On met le logo (source) dans l'image de destination (la photo)
     if ($_POST['filter'] === "joint")
     {
-        $filt_x = 135;
-        $filt_y = 65;
+        $filt_x = 155 * 3;
+        $filt_y = 75 * 3;
         $scale_x = imagesx($destination) * 0.4;
         $scale_y = imagesy($destination) * 0.4;      
     }
     else if ($_POST['filter'] === "masque")
     {
-        $filt_x = 60;
-        $filt_y = -57;
+        $filt_x = 69 * 3;
+        $filt_y = -57 * 3;
         $scale_x = imagesx($destination) * 0.60;
         $scale_y = imagesy($destination) * 0.77;
     }

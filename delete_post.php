@@ -18,10 +18,17 @@
 
         if ($r[0]['COUNT(*)'] > 0)
         {
+            $prep5 = $dbsql->prepare('SELECT * FROM post WHERE author_id=:author_id AND id=:id');
+            $prep5->bindParam(':author_id', $_SESSION['logged_on_user']);
+            $prep5->bindParam(':id', $id);
+            $prep5->execute();
+            $r2 = $prep5->fetchAll();
+
             $prep = $dbsql->prepare('DELETE FROM post WHERE author_id=:author_id AND id=:id');
             $prep->bindParam(':author_id', $_SESSION['logged_on_user']);
             $prep->bindParam(':id', $id);
             $prep->execute();
+            
 
             $prep2 = $dbsql->prepare('DELETE FROM likes WHERE picture_id=:id');
             $prep2->bindParam(':id', $id);
@@ -30,6 +37,10 @@
             $prep3 = $dbsql->prepare('DELETE FROM comment WHERE picture_id=:id');
             $prep3->bindParam(':id', $id);
             $prep3->execute();
+            
+            if (file_exists("ressources/pictures/".$id .$r2[0]['type'])){
+                unlink("ressources/pictures/".$id .$r2[0]['type']);
+            }
         }
     }
     header("Location:picture.php");

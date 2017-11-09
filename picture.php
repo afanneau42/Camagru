@@ -68,6 +68,7 @@
                             <p> or </p>
                             <form id="form_upload" action="upload.php" method="post" class="form_upload" enctype="multipart/form-data">
                                 <input name="upload" type="file" id="uploadbutton" class="uploadbutton" disabled> </input>
+                                <input name="filter" id="filter_upload" value="" hidden></hidden>
                                 <input type="submit" value="Upload" name="submit"></input>
                         </div>
                     </form>
