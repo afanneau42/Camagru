@@ -17,7 +17,9 @@
                 <a href="index.php" id="text-logo">Camagru</a>
             </div>
             <div class="flex-center">
-
+                <div id="div-core">
+                    <a href="gallery.php"><div class="div-core-txt">Gallery</div></a>
+                </div> 
             </div>
             <div id="div-connexion">
                 <a href="connection.php"><div id="connexion">Sign in</div></a>

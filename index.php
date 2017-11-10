@@ -8,6 +8,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="index.css?version=60">
+        <link rel="stylesheet" type="text/css" href="index2.css?version=60">
         <meta charset="utf-8">
         <title>Camagru</title>
     </head>
@@ -23,12 +24,12 @@
                             <div id="div-core">
                                 <a href="picture.php"><div class="div-core-txt">Take a picture !</div></a>
                             </div>
-                            <div id="div-core">
-                                <a href="gallery.php"><div class="div-core-txt">Gallery</div></a>
-                            </div>
                             ';
                     }
-                ?> 
+                ?>
+                <div id="div-core">
+                                <a href="gallery.php"><div class="div-core-txt">Gallery</div></a>
+                </div> 
             </div>
             <?PHP
                 if ($_SESSION['logged_on_user'] == ''){

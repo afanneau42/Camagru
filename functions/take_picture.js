@@ -1,4 +1,8 @@
 (function() {
+
+  document.getElementById('filter_input').disabled = false;
+  document.getElementById('filter_input2').disabled = false;
+  document.getElementById('filter_input3').disabled = false;
     
       var streaming = false,
           video        = document.querySelector('#video'),
@@ -10,15 +14,15 @@
           width = 1080,
           height = 0;
     
-      navigator.getMedia = ( navigator.getUserMedia ||
-                             navigator.webkitGetUserMedia ||
-                             navigator.mozGetUserMedia ||
-                             navigator.msGetUserMedia);
-    
-      navigator.getMedia(
+          navigator.getMedia = ( navigator.getUserMedia ||
+            navigator.webkitGetUserMedia ||
+            navigator.mozGetUserMedia ||
+            navigator.msGetUserMedia);
+
+        navigator.getMedia(
         {
-          video: true,
-          audio: false
+        video: true,
+        audio: false
         },
         function(stream) {
           if (navigator.mozGetUserMedia) {
@@ -44,9 +48,7 @@
           streaming = true;
           canvas.width = width;
           canvas.height = height;
-          document.getElementById('filter_input').disabled = false;
-          document.getElementById('filter_input2').disabled = false;
-          document.getElementById('filter_input3').disabled = false;
+
         }
       }, false);
 
@@ -73,32 +75,41 @@
           startbutton.setAttribute('class', 'startbutton_enable');
           startbutton.setAttribute('value', 'startbutton');
           startbutton.disabled = false;
-          document.getElementById("uploadbutton").disabled = false;
+
         }
       }
       
       document.getElementById("filter_input").onclick = function() {
         enablestartbutton();
-        document.getElementById("preview_1").setAttribute('style', 'display:block;');
-        document.getElementById("preview_2").setAttribute('style', 'display:hiddden;');
-        document.getElementById("preview_3").setAttribute('style', 'display:hidden;');
+        if (streaming == true) {
+          document.getElementById("preview_1").setAttribute('style', 'display:block;');
+          document.getElementById("preview_2").setAttribute('style', 'display:hiddden;');
+          document.getElementById("preview_3").setAttribute('style', 'display:hidden;');
+        }
         document.getElementById("filter_upload").setAttribute('value', 'masque');
+        document.getElementById("uploadbutton").disabled = false;
       }
 
       document.getElementById("filter_input2").onclick = function() {
         enablestartbutton();
-        document.getElementById("preview_1").setAttribute('style', 'display:hiddden;');
-        document.getElementById("preview_2").setAttribute('style', 'display:block;');
-        document.getElementById("preview_3").setAttribute('style', 'display:hiddden;');
+        if (streaming == true) {
+          document.getElementById("preview_1").setAttribute('style', 'display:hiddden;');
+          document.getElementById("preview_2").setAttribute('style', 'display:block;');
+          document.getElementById("preview_3").setAttribute('style', 'display:hiddden;');
+        }
         document.getElementById("filter_upload").setAttribute('value', 'joint');
+        document.getElementById("uploadbutton").disabled = false;
       }
 
       document.getElementById("filter_input3").onclick = function() {
         enablestartbutton();
-        document.getElementById("preview_1").setAttribute('style', 'display:hiddden;');
-        document.getElementById("preview_2").setAttribute('style', 'display:hiddden;');
-        document.getElementById("preview_3").setAttribute('style', 'display:block;');
+        if (streaming == true) {
+          document.getElementById("preview_1").setAttribute('style', 'display:hiddden;');
+          document.getElementById("preview_2").setAttribute('style', 'display:hiddden;');
+          document.getElementById("preview_3").setAttribute('style', 'display:block;');
+        }
         document.getElementById("filter_upload").setAttribute('value', 'moustache');
+        document.getElementById("uploadbutton").disabled = false;
       }
 
       function draw() {

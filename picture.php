@@ -64,15 +64,17 @@
                         </div>
                         <div class="div_buttons">
                             <button id="startbutton" disabled>Take a picture</button>
-                        </form>
-                            <p> or </p>
-                            <form id="form_upload" action="upload.php" method="post" class="form_upload" enctype="multipart/form-data">
-                                <input name="upload" type="file" id="uploadbutton" class="uploadbutton" disabled> </input>
-                                <input name="filter" id="filter_upload" value="" hidden></hidden>
-                                <input type="submit" value="Upload" name="submit"></input>
-                        </div>
                     </form>
-                </div>
+                    <p> or </p>
+                    <form id="form_upload" action="upload.php" method="post" class="form_upload" enctype="multipart/form-data">
+                        <input name="upload" type="file" id="uploadbutton" class="uploadbutton" disabled> </input>
+                        <input name="filter" id="filter_upload" value="" hidden></hidden>
+                        <input type="submit" value="Upload" name="submit"></input>
+                    </form>
+                        </br>
+                        <span class="advice_txt"> Advice: Picture size has to be less than 4Mb, 700x560 and .jpeg / .jpg / .png</span>
+                    </div>
+                    </div>
                 <div class="pictures" id="pictures">
                     <?PHP
                         include "functions/f_display.php";
@@ -89,6 +91,5 @@
         </div>
         <script type="text/javascript" src="functions/take_picture.js?version=69"></script>
         <script type="text/javascript" src="functions/update_picture.js?version=69"></script>
-        <script type="text/javascript" src="functions/del_picture.js?version=69"></script>
     </body>
 </html>

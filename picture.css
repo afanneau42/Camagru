@@ -4,9 +4,10 @@ body {
 }
 
 .mid-center {
+    background-image: url(ressources/mosaique-yeux.jpg);
+    background-size: cover;
     margin-left: 5%;
     margin-right: 5%;
-    background-color: white; 
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -63,6 +64,7 @@ body {
 }
 
 .div_filters {
+    margin: auto;
     width: 400px;
     min-height: 5%;
     border-radius: 5px;
@@ -184,4 +186,8 @@ i {
     transform: rotateY(180deg);
     -webkit-transform:rotateY(180deg); /* Safari and Chrome */
     -moz-transform:rotateY(180deg); /* Firefox */
+}
+
+.advice_txt {
+    font-family: Arial, Helvetica, sans-serif;
 }

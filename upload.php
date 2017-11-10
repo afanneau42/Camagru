@@ -1,19 +1,21 @@
 <?PHP
-        header('Location: picture.php');
+    header('Location: picture.php');
     include "functions/functions_db.php";
 
     if (!isset($_SESSION))
         session_start();
     $type = 0;
+    if (empty($_FILES['upload']))
+        return ;
     if ($_FILES['upload']['type'] === "image/png")
         $type = ".png";
     else if ($_FILES['upload']['type'] === "image/jpg")
         $type = ".jpg";
     else if ($_FILES['upload']['type'] === "image/jpeg")
         $type = ".jpeg";
-    if ($type !== 0 && !empty($_FILES['upload']) && ($_POST['filter'] === "masque" || $_POST['filter'] === "joint" || $_POST['filter'] === "moustache"))
+    if ($type !== 0 && ($_POST['filter'] === "masque" || $_POST['filter'] === "joint" || $_POST['filter'] === "moustache"))
     { 
-        if ($_FILES['upload']['size'] < 4000000 && $_FILES['upload']['error'] === 0 && !empty($_SESSION['logged_on_user']))
+        if ($_FILES['upload']['size'] < 4194304 && $_FILES['upload']['error'] === 0 && !empty($_SESSION['logged_on_user']))
         {
             $key = hash('whirlpool', rand());
             if (!move_uploaded_file($_FILES['upload']['tmp_name'], "ressources/pictures/" . $key . $type))

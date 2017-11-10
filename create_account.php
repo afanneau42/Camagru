@@ -77,9 +77,13 @@
                     $passage_ligne = "\n";
                 }
 
+                $link = "http://".$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF'];
+                $link = str_replace("/inscription.php", "", $link);
+                $link = $link . '/verify_email.php?code=' . $activ_code;
+
                 $to = htmlspecialchars($_POST['mail']);
                 $subject = "Activate your account";
-                $txt = "Welcome " . htmlspecialchars($_POST['username']) . ', ' . $passage_ligne . ' The last step is to verify your email by clicking in this link : ' . $passage_ligne . $passage_ligne . ' http://localhost:8080/camagru/verify_email.php?code=' . $activ_code . $passage_ligne . $passage_ligne . "See you soon" . $passage_ligne . "Camagru's staff" . $passage_ligne;
+                $txt = "Welcome " . htmlspecialchars($_POST['username']) . ', ' . $passage_ligne . ' The last step is to verify your email by clicking in this link : ' . $passage_ligne . $passage_ligne . $link . $passage_ligne . $passage_ligne . "See you soon" . $passage_ligne . "Camagru's staff" . $passage_ligne;
                 $headers = "From: support@camagru.com";
 
                 mail($to,$subject,$txt,$headers);

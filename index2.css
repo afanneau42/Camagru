@@ -1,0 +1,12 @@
+#mid-center {
+    background-image: url("ressources/mosaique-yeux.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: anim 20s;
+}
+
+@keyframes anim {
+    0%{background-size: 2000px 2000px;filter:blur(0px);}
+    100%{background-size: 5000px 5000px; filter:blur(10px);}
+}

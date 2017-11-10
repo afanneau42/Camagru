@@ -60,6 +60,8 @@
     display: flex;
     justify-content: space-around;
     flex-direction: column;
+    background-repeat: repeat-y;
+    background-size: 5000px 5000px;
 }
 
 .post_like img, .post_com img {

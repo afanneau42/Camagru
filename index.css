@@ -191,6 +191,7 @@ element.style {
     margin-right: 5%;
     width: 100%;
     display : flex;
-    justify-content: center;
-    background-color: white;
+    justify-content: center;;
+    background-image: url(ressources/mosaique-yeux.jpg);
+    background-size: cover;
 }

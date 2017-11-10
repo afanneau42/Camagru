@@ -1,14 +1,9 @@
-console.log("test5");
-
-
 function display_new(id, type, uid) {
     var new_d = document.createElement("div");
     var new_a_del = document.createElement("a");
     var new_i = document.createElement("i");
     var new_a_post = document.createElement("a");
     var pic_back = document.createElement("div");
-
-    console.log("test");
 
     new_d.setAttribute("class", "picture_history");
     new_d.setAttribute("id", "pic_" + id);

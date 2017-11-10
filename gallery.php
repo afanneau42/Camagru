@@ -1,7 +1,5 @@
 <?PHP
     session_start();
-    if (!isset($_SESSION['logged_on_user']) || $_SESSION['logged_on_user'] == "")
-        header("Location:must_be_log.php");
     if (!isset($_GET['page']))
         $_GET['page'] = 1;
 ?>
@@ -27,12 +25,12 @@
                                 <div id="div-core">
                                     <a href="picture.php"><div class="div-core-txt">Take a picture !</div></a>
                                 </div>
-                                <div id="div-core">
-                                    <a href="gallery.php"><div class="div-core-txt">Gallery</div></a>
-                                </div>
                                 ';
                         }
                 ?>
+                <div id="div-core">
+                                <a href="gallery.php"><div class="div-core-txt">Gallery</div></a>
+                </div> 
             </div>
                 <div id="div-connexion">
                     <a href="logout.php"><div id="connexion">Logout</div></a>
