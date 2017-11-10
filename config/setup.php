@@ -70,11 +70,11 @@
         /* Post inserts */
 
         $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '3', '1488688384', '.jpeg');");
-        $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '2', '1496924224', '.png');");
+        $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '2', '1496924224', '.jpeg');");
         $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '1', '1503212701', '.jpeg');");
         
-        $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '3', '1488688384', '.png');");
-        $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '2', '1496924224', '.png');");
+        $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '3', '1488688384', '.jpeg');");
+        $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '2', '1496924224', '.jpeg');");
         $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '1', '1503212701', '.jpeg');");
         
         $dbsql->query("INSERT INTO `post` (`id`, `author_id`, `creation_date`, `type`) VALUES (NULL, '3', '1488688384', '.jpeg');");
