@@ -1,6 +1,6 @@
 <?PHP
     session_start();
-    if (empty($_GET['code'])) {
+    if (empty($_GET['code']) || (isset($_SESSION['logged_on_user']) && $_SESSION['logged_on_user'] != "")) {
         header("Location:index.php");
     }
 ?>
@@ -18,7 +18,9 @@
                 <a href="index.php" id="text-logo">Camagru</a>
             </div>
             <div class="flex-center">
-
+                <div id="div-core">
+                    <a href="gallery.php"><div class="div-core-txt">Gallery</div></a>
+                </div> 
             </div>
             <?PHP
                 if ($_SESSION['logged_on_user'] == ''){

@@ -32,10 +32,22 @@
                                 <a href="gallery.php"><div class="div-core-txt">Gallery</div></a>
                 </div> 
             </div>
+            <?PHP
+            if ($_SESSION['logged_on_user'] == ''){
+                echo '
+                    <div id="div-connexion">
+                        <a href="connection.php"><div id="connexion">Sign in</div></a>
+                        <a href="inscription.php"><div id="inscription">Sign up</div></a>
+                    </div>';
+            }
+            else {
+                echo '
                 <div id="div-connexion">
                     <a href="logout.php"><div id="connexion">Logout</div></a>
                     <a href="profile.php"><div id="connexion">Profile</div></a>
-                </div>
+                </div>';
+            }
+        ?>
         </div>
         <div id="mid">
             <div id="mid-center">
